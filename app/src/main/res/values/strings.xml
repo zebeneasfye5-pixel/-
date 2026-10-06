@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ጥንተ ጥበብ</string>
+    <string name="app_tagline">የአባቶቻችን ጥንታዊ ጥበብና የቀመር ማውጫ</string>
+    <string name="title_enoch">መጽሐፈ ሄኖክ</string>
+    <string name="title_abushahir">አቡሻህር (ባህረ ሐሳብ)</string>
+    <string name="title_zodiac">ኮከብ ቆጠራና ዕጣ ፈንታ</string>
+    <string name="title_healing">የፈውስና ዕፀዋት ጥበብ</string>
+    <string name="title_harmony">የፍቅርና ስምምነት ጥበብ</string>
+    <string name="title_oracle">የጥበብ ጠያቂ (መፍትሔ ሥራይ)</string>
+    <string name="title_payment">ክፍያና ማረጋገጫ</string>
+</resources>

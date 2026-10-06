@@ -1,0 +1,6 @@
+{
+  "name": "ጥንተ ጥበብ",
+  "description": "የአባቶቻችን ጥንታዊ ጥበብ፣ መጽሐፈ ሄኖክ፣ አቡሻህር፣ የኮከብ ቆጠራና ዕጣ ፈንታ፣ ባህረ ሐሳብ፣ የፈውስ ዕፀዋት እና የቀመር ማውጫ",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
