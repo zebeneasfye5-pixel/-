@@ -4,7 +4,7 @@ data class ZodiacSign(
     val id: Int,
     val nameGeez: String,
     val nameAmharic: String,
-    val element: String, // እሳት, መሬት, ነፋስ, ውሃ
+    val element: String,
     val planet: String,
     val angel: String,
     val gemStone: String,
@@ -28,7 +28,6 @@ data class ZodiacCalculationResult(
 )
 
 object ZodiacEngine {
-    // Ancient Abushahir Gematria letter values (አበግደሀ የፊደል ቀመር)
     private val letterValues = mapOf(
         'ሀ' to 1, 'ሁ' to 1, 'ሂ' to 1, 'ሃ' to 1, 'ሄ' to 1, 'ህ' to 1, 'ሆ' to 1,
         'ለ' to 2, 'ሉ' to 2, 'ሊ' to 2, 'ላ' to 2, 'ሌ' to 2, 'ል' to 2, 'ሎ' to 2,
@@ -55,7 +54,15 @@ object ZodiacEngine {
         'ጸ' to 500, 'ጹ' to 500, 'ጺ' to 500, 'ጻ' to 500, 'ጼ' to 500, 'ጽ' to 500, 'ጾ' to 500,
         'ፀ' to 600, 'ፁ' to 600, 'ፂ' to 600, 'ፃ' to 600, 'ፄ' to 600, 'ፅ' to 600, 'ፆ' to 600,
         'ፈ' to 700, 'ፉ' to 700, 'ፊ' to 700, 'ፋ' to 700, 'ፌ' to 700, 'ፍ' to 700, 'ፎ' to 700,
-        'ፐ' to 800, 'ፑ' to 800, 'ፒ' to 800, 'ፓ' to 800, 'ፔ' to 800, 'ፕ' to 800, 'ፖ' to 800
+        'ፐ' to 800, 'ፑ' to 800, 'ፒ' to 800, 'ፓ' to 800, 'ፔ' to 800, 'ፕ' to 800, 'ፖ' to 800,
+        // የአማርኛ ተጨማሪ ፊደላት (Derived letters in Ethiopian tradition matched to their base letters)
+        'ሸ' to 7, 'ሹ' to 7, 'ሺ' to 7, 'ሻ' to 7, 'ሼ' to 7, 'ሽ' to 7, 'ሾ' to 7,
+        'ቸ' to 10, 'ቹ' to 10, 'ቺ' to 10, 'ቻ' to 10, 'ቼ' to 10, 'ች' to 10, 'ቾ' to 10,
+        'ኘ' to 30, 'ኙ' to 30, 'ኚ' to 30, 'ኛ' to 30, 'ኜ' to 30, 'ኝ' to 30, 'ኞ' to 30,
+        'ኸ' to 50, 'ኹ' to 50, 'ኺ' to 50, 'ኻ' to 50, 'ኼ' to 50, 'ኽ' to 50, 'ኾ' to 50,
+        'ዠ' to 80, 'ዡ' to 80, 'ዢ' to 80, 'ዣ' to 80, 'ዤ' to 80, 'ዥ' to 80, 'ዦ' to 80,
+        'ጀ' to 100, 'ጁ' to 100, 'ጂ' to 100, 'ጃ' to 100, 'ጄ' to 100, 'ጅ' to 100, 'ጆ' to 100,
+        'ጨ' to 300, 'ጩ' to 300, 'ጪ' to 300, 'ጫ' to 300, 'ጬ' to 300, 'ጭ' to 300, 'ጮ' to 300
     )
 
     fun calculateGematria(name: String): Int {
@@ -82,11 +89,11 @@ object ZodiacEngine {
             angel = "ቅዱስ ሚካኤል (St. Michael)",
             gemStone = "ቀይ ሩቢ (Ruby)",
             luckyDay = "ማክሰኞ (Tuesday)",
-            luckyColor = "ቀይ እና ወርቃማ (Crimson & Gold)",
-            personality = "ደፋር፣ አመራር ወዳድ፣ ኃይለኛ መንፈስ ያለው፣ ቶሎ የሚቆጣ ግን ቶሎ የሚበርድ፣ ቅን ልብ ያለው እና ለጓደኛ ታማኝ።",
-            destinyAndWealth = "በወጣትነቱ ብዙ ፈተና ገጥሞት በዕድሜ ማለዳ ላይ ከፍተኛ ክብርና ሀብት ያገኛል። በንግድና በአመራር ዘርፍ ትልቅ ስኬት ይኖረዋል።",
-            healthAdvice = "የራስ ምታትና የዓይን ድካም ሊያጋጥመው ይችላል። ቀዝቃዛ ውሃ መጠጣትና በዳማከሴ መታጠን ይስማማዋል።",
-            loveCompatibility = "ከቀውስ (Sagittarius) እና ከአሰድ (Leo) ጋር እጅግ ይስማማል። ከሰርጣን (Cancer) ጋር ጥንቃቄ ያስፈልገዋል።",
+            luckyColor = "ቀይ እና ወርቃማ",
+            personality = "ደፋር፣ አመራር ወዳድ፣ ኃይለኛ መንፈስ ያለው፣ ቅን ልብ ያለው እና ለወዳጅ ታማኝ።",
+            destinyAndWealth = "በወጣትነቱ ብዙ ፈተና ገጥሞት በዕድሜ ማለዳ ላይ ከፍተኛ ክብርና ሀብት ያገኛል።",
+            healthAdvice = "የራስ ምታትና የዓይን ድካም ሊያጋጥመው ይችላል። በዳማከሴ መታጠን ይስማማዋል።",
+            loveCompatibility = "ከቀውስ (Sagittarius) እና ከአሰድ (Leo) ጋር እጅግ ይስማማል።",
             ancientPrayer = "በስመ አብ ወወልድ ወመንፈስ ቅዱስ፤ ሚካኤል መልአክ አዕርጋ ለጸሎትየ፤ አድኅነኒ እምእሳት ወእምኩሉ ጸላኢ።"
         ),
         ZodiacSign(
@@ -98,11 +105,11 @@ object ZodiacEngine {
             angel = "ቅዱስ ገብርኤል (St. Gabriel)",
             gemStone = "መረግድ (Emerald)",
             luckyDay = "ዓርብ (Friday)",
-            luckyColor = "አረንጓዴ እና ቡናማ (Green & Earth Brown)",
-            personality = "ረጋ ያለ፣ ጽኑ፣ ታታሪ፣ ጥበባዊ ፍቅር ያለው፣ ሀብት አጠራቃሚ፣ በቀላሉ ውሳኔ የማይቀይር ታማኝ ሰው።",
-            destinyAndWealth = "በእርሻ፣ በሕንፃ፣ በንግድና በንብረት ግዥ ትልቅ ባለጸጋ ይሆናል። ድካሙ ፈጽሞ ከንቱ አይቀርም።",
+            luckyColor = "አረንጓዴ",
+            personality = "ረጋ ያለ፣ ጽኑ፣ ታታሪ፣ ጥበባዊ ፍቅር ያለው፣ ሀብት አጠራቃሚ ታማኝ ሰው።",
+            destinyAndWealth = "በእርሻ፣ በሕንፃ፣ በንግድና በንብረት ግዥ ትልቅ ባለጸጋ ይሆናል።",
             healthAdvice = "የጉሮሮና የአንገት ሕመም ሊያጋጥመው ስለሚችል ማርና ዝንጅብል መመገብ ይመከራል።",
-            loveCompatibility = "ከሰንቡላ (Virgo) እና ከጃዲ (Capricorn) ጋር እጅግ የጸና ትዳር ይመሰርታል።",
+            loveCompatibility = "ከሰንቡላ (Virgo) እና ከጃዲ (Capricorn) ጋር የጸና ትዳር ይመሰርታል።",
             ancientPrayer = "ገብርኤል አብሳሬ ሰላም፤ አብሥረኒ በሰላም ወበበረከት፤ አንትሙ መላእክተ ምድር ዐቅቡኒ።"
         ),
         ZodiacSign(
@@ -112,12 +119,12 @@ object ZodiacEngine {
             element = "ነፋስ (Air)",
             planet = "አጣርድ (Mercury)",
             angel = "ቅዱስ ሩፋኤል (St. Raphael)",
-            gemStone = "ቶጳዝዮን (Topaz)",
+            gemStone = "ቶጳዝዮን",
             luckyDay = "ረቡዕ (Wednesday)",
-            luckyColor = "ቢጫ እና ሰማያዊ (Yellow & Sky Blue)",
-            personality = "አንደበተ ርቱዕ፣ ፈጣን አሳቢ፣ ተወዳጅ፣ ጥበብና እውቀት ፈላጊ፣ ተለዋዋጭ ግን ማራኪ ስብዕና ያለው።",
-            destinyAndWealth = "በጽሕፈት፣ በመገናኛ ብዙኃን፣ በንግግርና በጥናት ዘርፍ ስሙ ይታወቃል። የሀብት ምንጩ ልዩ ልዩ ነው።",
-            healthAdvice = "የሳንባና የነርቭ ውጥረት እንዳይበዛበት የጠዋት ንጹሕ አየር መተንፈስና ጦስኝ ሻይ መጠጣት መልካም ነው።",
+            luckyColor = "ቢጫ እና ሰማያዊ",
+            personality = "አንደበተ ርቱዕ፣ ፈጣን አሳቢ፣ ተወዳጅ፣ ጥበብና እውቀት ፈላጊ ማራኪ ስብዕና።",
+            destinyAndWealth = "በጽሕፈት፣ በመገናኛ ብዙኃን፣ በንግግርና በጥናት ዘርፍ ስሙ ይታወቃል።",
+            healthAdvice = "የሳንባና የነርቭ ውጥረት እንዳይበዛበት ጦስኝ ሻይ መጠጣት መልካም ነው።",
             loveCompatibility = "ከሚዛን (Libra) እና ከደለው (Aquarius) ጋር በፍቅር ይስማማል።",
             ancientPrayer = "ሩፋኤል ፈዋሴ ዱያን፤ ፈውሰኒ እምሕማመ ልብ ወእምሕማመ ሥጋ፤ ወአብርህ አዕይንትየ።"
         ),
@@ -130,10 +137,10 @@ object ZodiacEngine {
             angel = "ቅዱስ ዑራኤል (St. Uriel)",
             gemStone = "ሉል (Pearl)",
             luckyDay = "ሰኞ (Monday)",
-            luckyColor = "ብርማ እና ነጭ (Silver & White)",
-            personality = "ሩኅሩኅ፣ የቤተሰብ ወዳድ፣ ምስጢር ጠባቂ፣ ጥልቅ ስሜት ያለው፣ ታዛቢና መንፈሳዊ ጥበብን የሚያስተውል።",
-            destinyAndWealth = "ከውጭ ሀገር ጉዞና ከውሃ/ባህር ጋር የተያያዘ ሥራ በረከት ያመጣለታል። በእድሜው አጋማሽ ሰፊ ርስት ይይዛል።",
-            healthAdvice = "የጨጓራና የሆድ መነፋት እንዳይኖረው ጤናአዳም ማፍላትና መረጋጋት ይገባዋል።",
+            luckyColor = "ብርማ እና ነጭ",
+            personality = "ሩኅሩኅ፣ የቤተሰብ ወዳድ፣ ምስጢር ጠባቂ፣ ጥልቅ ስሜት ያለው ታዛቢ።",
+            destinyAndWealth = "ከውጭ ሀገር ጉዞና ከንግድ ጋር የተያያዘ ሥራ በረከት ያመጣለታል።",
+            healthAdvice = "የጨጓራና የሆድ መነፋት እንዳይኖረው ጤናአዳም ማፍላት ይገባዋል።",
             loveCompatibility = "ከአቅራብ (Scorpio) እና ከሑት (Pisces) ጋር የተባረከ ፍቅር ይኖረዋል።",
             ancientPrayer = "ዑራኤል መላከ ብርሃን፤ በጽዋዐ እሳት ዘአስተይኮ ለዕዝራ፤ አጽግበኒ ጥበበ ወማዕምረ።"
         ),
@@ -144,14 +151,14 @@ object ZodiacEngine {
             element = "እሳት (Fire)",
             planet = "ፀሐይ (Sun)",
             angel = "ቅዱስ ፋኑኤል (St. Phanuel)",
-            gemStone = "አልማዝ (Diamond)",
+            gemStone = "አልማዝ",
             luckyDay = "እሑድ (Sunday)",
-            luckyColor = "ወርቃማ እና ብርቱካናማ (Gold & Orange)",
-            personality = "ግርማ ሞገስ ያለው፣ ቸር፣ ኩሩ፣ መሪ፣ ተከባሪ፣ የተቸገረን የሚረዳ ግን ክብሩን የማይነካኩበት።",
-            destinyAndWealth = "በህዝብ ፊት መሪና ባለሥልጣን ይሆናል። ሀብቱ በክብርና በታማኝነት የሚመጣ ነው።",
-            healthAdvice = "የልብ ጤንነትና የደም ዝውውርን መጠበቅ አለበት። ከመጠን ያለፈ ቁጣን ማስወገድ ይገባዋል።",
+            luckyColor = "ወርቃማ",
+            personality = "ግርማ ሞገስ ያለው፣ ቸር፣ መሪ፣ ተከባሪ፣ የተቸገረን የሚረዳ ኩሩ ሰው።",
+            destinyAndWealth = "በህዝብ ፊት መሪና ባለሥልጣን ይሆናል፤ ሀብቱ በክብር የሚመጣ ነው።",
+            healthAdvice = "የልብ ጤንነትና የደም ዝውውርን መጠበቅ አለበት።",
             loveCompatibility = "ከሐመል (Aries) እና ከቀውስ (Sagittarius) ጋር ፍጹም ስምምነት አለው።",
-            ancientPrayer = "ፋኑኤል ተቃዋሜ ሰይጣናት፤ ዐቅበኒ እምኩሉ ጸላዒ፤ ወጸግወኒ ግርማ ወሞገስ በቅድመ ሰብእ።"
+            ancientPrayer = "ፋኑኤል ተቃዋሜ ሰይጣናት፤ ዐቅበኒ እምኩሉ ጸላዒ፤ ወጸግወኒ ግርማ ወሞገስ።"
         ),
         ZodiacSign(
             id = 6,
@@ -159,15 +166,15 @@ object ZodiacEngine {
             nameAmharic = "እሸት/ድንግል (Virgo)",
             element = "መሬት (Earth)",
             planet = "አጣርድ (Mercury)",
-            angel = "ቅዱስ ሳቁኤል (St. Saquiel)",
-            gemStone = "ሰንፔር (Sapphire)",
+            angel = "ቅዱስ ሳቁኤል",
+            gemStone = "ሰንፔር",
             luckyDay = "ረቡዕ (Wednesday)",
-            luckyColor = "ባህር ሰማያዊ እና የወይራ አረንጓዴ (Navy & Olive)",
-            personality = "ጥንቁቅ፣ ንጹሕ፣ ሂሳባዊ አእምሮ ያለው፣ ስራ ወዳድ፣ አገልጋይ፣ ጥቃቅን ነገሮችን የሚያስተውል።",
-            destinyAndWealth = "በሂሳብ፣ በሕክምና፣ በአስተዳደርና በምርምር ከፍተኛ ደረጃ ይደርሳል። ንብረቱ በተደራጀ መንገድ ያድጋል።",
-            healthAdvice = "የአንጀትና የምግብ መፈጨት ሥርዓቱን ለመጠበቅ እሬትና ከሙን መውሰድ ይስማማዋል።",
+            luckyColor = "ወይራ አረንጓዴ",
+            personality = "ጥንቁቅ፣ ንጹሕ፣ ሂሳባዊ አእምሮ ያለው፣ ስራ ወዳድ፣ ጥቃቅን ነገሮችን የሚያስተውል።",
+            destinyAndWealth = "በሂሳብ፣ በሕክምና፣ በአስተዳደርና በምርምር ከፍተኛ ደረጃ ይደርሳል።",
+            healthAdvice = "የአንጀትና የምግብ መፈጨት ሥርዓቱን ለመጠበቅ እሬት መውሰድ ይስማማዋል።",
             loveCompatibility = "ከሰውር (Taurus) እና ከጃዲ (Capricorn) ጋር እጅግ የተጣጣመ ነው።",
-            ancientPrayer = "ሳቁኤል መልአክ ሰዳዴ ደዌ፤ ፈውሰኒ በምሕረትከ፤ ወዕቀበኒ በጽድቅከ ወበዕለተ መከራ።"
+            ancientPrayer = "ሳቁኤል መልአክ ሰዳዴ ደዌ፤ ፈውሰኒ በምሕረትከ፤ ወዕቀበኒ በጽድቅከ።"
         ),
         ZodiacSign(
             id = 7,
@@ -175,15 +182,15 @@ object ZodiacEngine {
             nameAmharic = "ሚዛን (Libra)",
             element = "ነፋስ (Air)",
             planet = "ዙህራ (Venus)",
-            angel = "ቅዱስ ሰዲቅኤል (St. Sedikiel)",
-            gemStone = "ኦፓል (Opal)",
+            angel = "ቅዱስ ሰዲቅኤል",
+            gemStone = "ኦፓል",
             luckyDay = "ዓርብ (Friday)",
-            luckyColor = "ሮዝ እና ሰማያዊ (Rose & Pastel Blue)",
-            personality = "ፍትሐዊ፣ አስታራቂ፣ የውበት አድናቂ፣ ጨዋ፣ የሰውን ስሜት የሚረዳ፣ ከጭቅጭቅ የሚሸሽ የሰላም ሰው።",
-            destinyAndWealth = "በዳኝነት፣ በሽምግልና፣ በኪነ-ጥበብና በንግድ አጋርነት ይበለጽጋል። የሰዎች ፍቅር ያገኘዋል።",
-            healthAdvice = "የኩላሊትና የወገብ ጤንነትን መጠበቅ አለበት። ንጹሕ ውኃ አብዝቶ መጠጣት ይገባዋል።",
+            luckyColor = "ሰማያዊና ሮዝ",
+            personality = "ፍትሐዊ፣ አስታራቂ፣ የውበት አድናቂ፣ ጨዋ፣ ከጭቅጭቅ የሚሸሽ የሰላም ሰው።",
+            destinyAndWealth = "በዳኝነት፣ በሽምግልና፣ በኪነ-ጥበብና በንግድ አጋርነት ይበለጽጋል።",
+            healthAdvice = "የኩላሊትና የወገብ ጤንነትን መጠበቅ፤ ንጹሕ ውኃ አብዝቶ መጠጣት።",
             loveCompatibility = "ከጀውዛ (Gemini) እና ከደለው (Aquarius) ጋር ታላቅ ፍቅር ይገጥመዋል።",
-            ancientPrayer = "ሰዲቅኤል መላከ ጽድቅ ወፍትሕ፤ አቅንዕ ፍኖትየ ወፍትሕ ሊተ በጽድቅከ፤ ወአሰስል እምኔየ እኩየ።"
+            ancientPrayer = "ሰዲቅኤል መላከ ጽድቅ ወፍትሕ፤ አቅንዕ ፍኖትየ ወፍትሕ ሊተ በጽድቅከ።"
         ),
         ZodiacSign(
             id = 8,
@@ -191,15 +198,15 @@ object ZodiacEngine {
             nameAmharic = "ጊንጥ (Scorpio)",
             element = "ውሃ (Water)",
             planet = "መሪሕ (Mars)",
-            angel = "ቅዱስ አናንኤል (St. Ananiel)",
-            gemStone = "አሜቴስጢኖስ (Amethyst)",
+            angel = "ቅዱስ አናንኤል",
+            gemStone = "አሜቴስጢኖስ",
             luckyDay = "ማክሰኞ (Tuesday)",
-            luckyColor = "ጥቁር ቀይ እና ጥቁር (Dark Crimson & Black)",
-            personality = "ምስጢራዊ፣ ታጋይ፣ ኃይለኛ ተጽዕኖ ፈጣሪ፣ በውስጡ ጥልቅ እሳት ያለው፣ ተስፋ የማይቆርጥ ጽኑ ልብ።",
-            destinyAndWealth = "በፈተናዎች አልፎ ታላቅ ኃይልና ባለሀብት ይሆናል። ድብቅ ምስጢራትንና ሀብቶችን ፈልጎ ያገኛል።",
-            healthAdvice = "የመራቢያ አካላትና የደም ጤንነትን መንከባከብ። በከርቤ መታጠን መንፈሱን ያረጋጋዋል።",
+            luckyColor = "ጥቁር ቀይ",
+            personality = "ምስጢራዊ፣ ታጋይ፣ ኃይለኛ ተጽዕኖ ፈጣሪ፣ ተስፋ የማይቆርጥ ጽኑ ልብ።",
+            destinyAndWealth = "በፈተናዎች አልፎ ታላቅ ኃይልና ባለሀብት ይሆናል፤ ድብቅ ሀብትን ያገኛል።",
+            healthAdvice = "በከርቤ መታጠን መንፈሱን ያረጋጋዋል።",
             loveCompatibility = "ከሰርጣን (Cancer) እና ከሑት (Pisces) ጋር የነፍስ ግንኙነት ይፈጥራል።",
-            ancientPrayer = "አናንኤል መልአከ ኃይል፤ ሰብር ኃይሎሙ ለጸላዕትየ፤ ወአርኅቅ እምኔየ መንፈሰ ጽልመት።"
+            ancientPrayer = "አናንኤል መልአከ ኃይል፤ ሰብር ኃይሎሙ ለጸላዕትየ፤ ወአርኅቅ እምኔየ ጽልመት።"
         ),
         ZodiacSign(
             id = 9,
@@ -207,15 +214,15 @@ object ZodiacEngine {
             nameAmharic = "ቀስት (Sagittarius)",
             element = "እሳት (Fire)",
             planet = "ሙሽተሪ (Jupiter)",
-            angel = "ቅዱስ ባርክኤል (St. Barkiel)",
-            gemStone = "ቱርኮይዝ (Turquoise)",
+            angel = "ቅዱስ ባርክኤል",
+            gemStone = "ቱርኮይዝ",
             luckyDay = "ሐሙስ (Thursday)",
-            luckyColor = "ወይን ጠጅ እና ወርቃማ (Purple & Gold)",
-            personality = "ተስፈኛ፣ ተጓዥ፣ እውነተኛ፣ ፈላስፋ፣ ለነጻነቱ የሚሳሳ፣ ለጋስ እና ሰዎችን የሚያበረታታ።",
+            luckyColor = "ወይን ጠጅ",
+            personality = "ተስፈኛ፣ ተጓዥ፣ እውነተኛ፣ ፈላስፋ፣ ለነጻነቱ የሚሳሳ፣ ለጋስ።",
             destinyAndWealth = "በባህር ማዶ ጉዞ፣ በትምህርት፣ በሕግና በውጭ ንግድ የበለጸገ ሕይወት ይመራል።",
-            healthAdvice = "የጭንና የጉበት ጤንነትን መጠበቅ። ዘይተ-ወይራና የተፈጥሮ ዕፅዋት ይስማሙታል።",
-            loveCompatibility = "ከሐመል (Aries) እና ከአሰድ (Leo) ጋር የደመቀ የፍቅር ሕይወት ይኖረዋል።",
-            ancientPrayer = "ባርክኤል መላከ በረከት፤ ባርክ ቤትየ ወንዋይየ፤ ወአብጽሐኒ ውስተ ፍኖተ ሰላም ዘእንበለ ዕንቅፋት።"
+            healthAdvice = "የጉበት ጤንነትን መጠበቅ፤ ዘይተ-ወይራና የተፈጥሮ ዕፅዋት ይስማሙታል።",
+            loveCompatibility = "ከሐመል (Aries) እና ከአሰድ (Leo) ጋር የደመቀ ፍቅር ይኖረዋል።",
+            ancientPrayer = "ባርክኤል መላከ በረከት፤ ባርክ ቤትየ ወንዋይየ፤ ወአብጽሐኒ ውስተ ሰላም።"
         ),
         ZodiacSign(
             id = 10,
@@ -223,15 +230,15 @@ object ZodiacEngine {
             nameAmharic = "ፍየል (Capricorn)",
             element = "መሬት (Earth)",
             planet = "ዙሐል (Saturn)",
-            angel = "ቅዱስ ሱርኤል (St. Suriel)",
-            gemStone = "ጋርኔት (Garnet)",
+            angel = "ቅዱስ ሱርኤል",
+            gemStone = "ጋርኔት",
             luckyDay = "ቀዳሜ (Saturday)",
-            luckyColor = "ጥቁር እና ጠቆር ያለ ሰማያዊ (Black & Charcoal)",
-            personality = "ትዕግሥተኛ፣ ታታሪ፣ አርቆ አሳቢ፣ ኃላፊነት የሚሰማው፣ ተራራ ወጪ፣ ሥርዓት አክባሪ።",
+            luckyColor = "ጥቁር",
+            personality = "ትዕግሥተኛ፣ ታታሪ፣ አርቆ አሳቢ፣ ኃላፊነት የሚሰማው ተራራ ወጪ።",
             destinyAndWealth = "እርምጃው ቀስ ብሎ ቢሆንም መጨረሻው ከፍተኛ ሥልጣንና ዘላቂ ሀብት ማፍራት ነው።",
-            healthAdvice = "የአጥንት፣ የጥርስና የመገጣጠሚያ ሕመምን ለመከላከል በፀሐይ መሞቅና ወተት/ካልሲየም መውሰድ።",
+            healthAdvice = "የአጥንትና የመገጣጠሚያ ሕመምን ለመከላከል በፀሐይ መሞቅ።",
             loveCompatibility = "ከሰውር (Taurus) እና ከሰንቡላ (Virgo) ጋር የተረጋጋ የዕድሜ ልክ ትዳር ይኖረዋል።",
-            ancientPrayer = "ሱርኤል መልአክ ዐቃቤ ሕይወት፤ አፅንዓኒ ውስተ ተስፋየ፤ ወአድኅነኒ እምነፋሰ ሞት ወሕማም።"
+            ancientPrayer = "ሱርኤል መልአክ ዐቃቤ ሕይወት፤ አፅንዓኒ ውስተ ተስፋየ።"
         ),
         ZodiacSign(
             id = 11,
@@ -239,15 +246,15 @@ object ZodiacEngine {
             nameAmharic = "ጋን (Aquarius)",
             element = "ነፋስ (Air)",
             planet = "ዙሐል (Saturn)",
-            angel = "ቅዱስ ራጉኤል (St. Raguel)",
-            gemStone = "አኳማሪን (Aquamarine)",
+            angel = "ቅዱስ ራጉኤል",
+            gemStone = "አኳማሪን",
             luckyDay = "ቀዳሜ (Saturday)",
-            luckyColor = "ኤሌክትሪክ ሰማያዊ (Electric Blue)",
-            personality = "አዲስ አሳቢ፣ የሰብዓዊ መብት ወዳድ፣ ፈጣሪ፣ ራሱን የቻለ፣ ወዳጅ አፍቃሪ ግን የራሱ ዓለም ያለው።",
+            luckyColor = "ኤሌክትሪክ ሰማያዊ",
+            personality = "አዲስ አሳቢ፣ ሰብዓዊ፣ ፈጣሪ፣ ራሱን የቻለ፣ ወዳጅ አፍቃሪ።",
             destinyAndWealth = "በሳይንስ፣ በቴክኖሎጂ፣ በማኅበራዊ ሥራና በአዳዲስ ፈጠራዎች ታላቅ ስም ያተርፋል።",
-            healthAdvice = "የደም ዝውውርንና የቁርጭምጭሚት አካባቢን መጠበቅ። ዘወትር እንቅስቃሴ ማድረግ።",
-            loveCompatibility = "ከጀውዛ (Gemini) እና ከሚዛን (Libra) ጋር ከፍተኛ የአእምሮና የፍቅር ስምምነት አለው።",
-            ancientPrayer = "ራጉኤል መልአከ ብርሃን ወሰላም፤ ተበቀል ሊተ እምጸላዕትየ፤ ወአብጽሐኒ ውስተ ብርሃንከ ዘዘለዓለም።"
+            healthAdvice = "የደም ዝውውርን መጠበቅ፤ ዘወትር እንቅስቃሴ ማድረግ።",
+            loveCompatibility = "ከጀውዛ (Gemini) እና ከሚዛን (Libra) ጋር ከፍተኛ ስምምነት አለው።",
+            ancientPrayer = "ራጉኤል መልአከ ብርሃን ወሰላም፤ ተበቀል ሊተ እምጸላዕትየ።"
         ),
         ZodiacSign(
             id = 12,
@@ -255,15 +262,15 @@ object ZodiacEngine {
             nameAmharic = "ዓሣ (Pisces)",
             element = "ውሃ (Water)",
             planet = "ሙሽተሪ (Jupiter)",
-            angel = "ቅዱስ ረሙኤል (St. Remuel)",
-            gemStone = "ጄድ እና ፔሪዶት (Jade)",
+            angel = "ቅዱስ ረሙኤል",
+            gemStone = "ጄድ",
             luckyDay = "ሐሙስ (Thursday)",
-            luckyColor = "የባህር አረንጓዴ እና ወይን ጠጅ (Sea Green & Violet)",
-            personality = "መንፈሳዊ፣ ሕልመኛ፣ ሩኅሩኅ፣ የሰውን ስሜት ተካፋይ፣ ኪነ-ጥበባዊ፣ የዋህ ግን ጥልቅ አስተዋይ።",
+            luckyColor = "የባህር አረንጓዴ",
+            personality = "መንፈሳዊ፣ ሕልመኛ፣ ሩኅሩኅ፣ የሰውን ስሜት ተካፋይ፣ ኪነ-ጥበባዊ አስተዋይ።",
             destinyAndWealth = "በመንፈሳዊ አገልግሎት፣ በሙዚቃ፣ በስዕልና በምጽዋት እጁ የተባረከ ይሆናል።",
-            healthAdvice = "የእግርና የሰውነት መከላከያ ኃይልን መጠበቅ። ዝንጅብልና ሎሚ በሞቀ ውሃ መጠጣት።",
+            healthAdvice = "ዝንጅብልና ሎሚ በሞቀ ውሃ መጠጣት ይመከራል።",
             loveCompatibility = "ከሰርጣን (Cancer) እና ከአቅራብ (Scorpio) ጋር የተዋበ የነፍስ ጓደኝነት ይመሰርታል።",
-            ancientPrayer = "ረሙኤል መላከ ትንሣኤ፤ አብርህ ውስተ ጽልመትየ፤ ወአዕርግ ጸሎትየ ውስተ መንበረ ጸጋ።"
+            ancientPrayer = "ረሙኤል መላከ ትንሣኤ፤ አብርህ ውስተ ጽልመትየ፤ ወአዕርግ ጸሎትየ።"
         )
     )
 
@@ -271,7 +278,6 @@ object ZodiacEngine {
         val sScore = calculateGematria(seekerName)
         val mScore = calculateGematria(motherName)
         val total = sScore + mScore
-        // Remainder mod 12: 1..12
         val remainder = if (total % 12 == 0) 12 else (total % 12)
         val sign = signs.firstOrNull { it.id == remainder } ?: signs[0]
 

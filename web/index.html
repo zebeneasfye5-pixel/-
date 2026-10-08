@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>የአባቶቻችን እውቀት - ጥንተ ጥበብ | Ancient Ethiopian Wisdom</title>
+    <meta name="description" content="የአባቶቻችን ጥንታዊ ጥበብ፣ መጽሐፈ ሄኖክ፣ አቡሻህር፣ የኮከብ ቆጠራና ዕጣ ፈንታ፣ ባሕረ ሐሳብ፣ የፈውስ ዕፀዋት እና መስተፋቅር።">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@300;400;600;700;800&family=Cinzel:wght@600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <header class="app-header">
+        <div class="header-container">
+            <div class="brand">
+                <div class="brand-emblem">
+                    <svg viewBox="0 0 100 100" class="emblem-svg">
+                        <circle cx="50" cy="50" r="46" fill="none" stroke="#D4AF37" stroke-width="2.5" stroke-dasharray="4,2"/>
+                        <circle cx="50" cy="50" r="38" fill="#1A1108" stroke="#D4AF37" stroke-width="1.5"/>
+                        <!-- Ethiopian Cross / Star -->
+                        <polygon points="50,15 58,38 82,38 62,52 70,76 50,62 30,76 38,52 18,38 42,38" fill="#D4AF37"/>
+                        <polygon points="50,26 55,41 71,41 58,50 63,66 50,57 37,66 42,50 29,41 45,41" fill="#C62828"/>
+                        <circle cx="50" cy="50" r="6" fill="#D4AF37"/>
+                    </svg>
+                </div>
+                <div class="brand-titles">
+                    <h1 class="brand-title">ጥንተ ጥበብ</h1>
+                    <span class="brand-subtitle">የአባቶቻችን እውቀትና ጥንታዊ መጻሕፍት</span>
+                </div>
+            </div>
+
+            <!-- Download APK Button & User Actions -->
+            <div class="header-actions">
+                <a href="tinte_tibeb.apk" download="ጥንተ_ጥበብ.apk" class="btn btn-download-apk" id="topDownloadBtn">
+                    <span class="icon-download">📥</span>
+                    <span class="btn-text">
+                        <strong>አፑን በነፃ አውርድ</strong>
+                        <small>Android APK (22 MB)</small>
+                    </span>
+                </a>
+
+                <select id="langSelector" class="lang-select" aria-label="ቋንቋ ይምረጡ">
+                    <option value="am">አማርኛ</option>
+                    <option value="ge">ግዕዝ</option>
+                    <option value="en">English</option>
+                    <option value="om">Afaan Oromoo</option>
+                    <option value="ti">ትግርኛ</option>
+                </select>
+
+                <div id="userBadge" class="user-badge" onclick="openProfileModal()">
+                    <span class="badge-avatar">👤</span>
+                    <span id="badgeUserName" class="badge-name">መለያ</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs">
+            <button class="nav-tab active" data-tab="home">🏠 መነሻ</button>
+            <button class="nav-tab" data-tab="zodiac">✨ ኮከብ ቆጠራ</button>
+            <button class="nav-tab" data-tab="bahire_hasab">☀️ ባሕረ ሐሳብ</button>
+            <button class="nav-tab" data-tab="love">❤️ መስተፋቅር</button>
+            <button class="nav-tab" data-tab="healing">🌿 የፈውስ ዕፀዋት</button>
+            <button class="nav-tab" data-tab="oracle">📜 የጥበብ ጠያቂ</button>
+            <button class="nav-tab" data-tab="enoch">🌌 መጽሐፈ ሄኖክ</button>
+            <button class="nav-tab" data-tab="payment">💳 ክፍያና ባንክ</button>
+        </nav>
+    </header>
+
+    <!-- Free APK Direct Banner -->
+    <section class="banner-download-strip">
+        <div class="banner-content">
+            <div class="banner-badge">🆓 ሙሉ በሙሉ በነፃ</div>
+            <div class="banner-text">
+                <strong>የጥንተ ጥበብ የሞባይል መተግበሪያን አሁኑኑ ወደ ስልክዎ ያውርዱ!</strong>
+                <span>ያለ ምንም ክፍያ በቀጥታ ይጫኑ፤ ያለ ኢንተርኔት በከፊል ይሰራል።</span>
+            </div>
+            <a href="tinte_tibeb.apk" download="ጥንተ_ጥበብ.apk" class="btn btn-gold btn-pulse">
+                <span>📲 አፑን ወደ ስልክ አውርድ</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="main-content">
+        <!-- 1. HOME TAB -->
+        <section id="tab-home" class="tab-pane active">
+            <div class="hero-parchment">
+                <div class="parchment-ornament top">✥ ✤ ✥ ✤ ✥ ✤ ✥ ✤ ✥</div>
+                <h2 class="hero-heading">በስመ አብ ወወልድ ወመንፈስ ቅዱስ አሐዱ አምላክ</h2>
+                <p class="hero-lead">
+                    ጥንት በመጽሐፈ ሄኖክ፣ በአቡሻህርና በቀደምት የአባቶቻችን ብራናዎች የሚገኙትን ልዩ ልዩ ጥበባት ጥቅልል አድርጎ የያዘ፤
+                    የኮከብ ቆጠራ፣ የፀሐይና ጨረቃ ቀመር፣ የሰው ልጅ ዕጣ ፈንታ፣ የፈውስ መድኃኒቶችና የመስተፋቅር ምስጢራትን በቅንጅት የሚመረምር ድረ ገጽና መተግበሪያ።
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-gold" onclick="switchTab('zodiac')">ኮከብዎን ይቁጠሩ</button>
+                    <button class="btn btn-outline" onclick="switchTab('love')">የመስተፋቅር ቀመር</button>
+                    <button class="btn btn-outline" onclick="switchTab('healing')">የፈውስ ዕፀዋት</button>
+                    <button class="btn btn-outline" onclick="switchTab('oracle')">ጥበብ ይጠይቁ</button>
+                </div>
+                <div class="parchment-ornament bottom">✥ ✤ ✥ ✤ ✥ ✤ ✥ ✤ ✥</div>
+            </div>
+
+            <!-- Universal Ancient Manuscript Command & Query Engine -->
+            <div class="command-engine-box">
+                <div class="command-header">
+                    <h3><span>⚡</span> ሁሉን አቀፍ የጥንታዊ መጻሕፍት ቀጥተኛ አዛዥና ጠያቂ</h3>
+                    <span class="ref-tag">ከነገጹና ሪፈረንሱ የሚመልስ</span>
+                </div>
+                <p class="command-subtext">
+                    በመጻሕፍቱ ዓለም ውስጥ የሚገኘውን ማንኛውንም እውቀት፣ ድግምት፣ ጸሎት ወይም ተግባራዊ ድርጊት በቀጥታ እዘዙ፤
+                    ስርዓቱ የመጽሐፉን ስም፣ ምዕራፍ፣ ገጽና ብራና ቁጥር ሪፈር በማድረግ ፍፁም ትክክለኛ ምላሽ ይሰጥዎታል።
+                </p>
+
+                <div class="command-input-group">
+                    <input type="text" id="universalQueryInput" placeholder="የሚፈልጉትን ትዕዛዝ ወይም ጥያቄ ይጻፉ (ለምሳሌ፡ የዓይነ ጥላ ድግምትና ጸሎት ከነገጹ፣ ለሆድ ቁርጠት የዕፀዋት ፈውስ፣ የሄኖክ ፀሐይ ደጆች...)" onkeydown="if(event.key==='Enter') executeUniversalCommand()">
+                    <button class="btn btn-gold" onclick="executeUniversalCommand()">እዘዝ / ጠይቅ ⚡</button>
+                </div>
+
+                <div class="quick-chips-row">
+                    <span class="quick-chip" onclick="setAndRunCommand('የዓይነ ጥላ መፍትሔ ሥራይ ድግምት፣ ጸሎትና አፈጻጸም ከመጽሐፉ ስጠኝ')">⚡ ዓይነ ጥላና መፍትሔ ሥራይ (ድግምት)</span>
+                    <span class="quick-chip" onclick="setAndRunCommand('ለሆድ ቁርጠትና ለራስ ምታት የሚሆን የዕፀዋት ፈውስ ከነገጹ ንገረኝ')">🌿 የሆድ ቁርጠትና ራስ ምታት (መጽሐፈ ፈውስ)</span>
+                    <span class="quick-chip" onclick="setAndRunCommand('የትዳር ሰላምና የልብ ስምምነት መስተፋቅር ጸሎትና ድርጊት ከመጽሐፉ አውጣልኝ')">❤️ መስተፋቅርና ስምምነት (ተፋቅሮ)</span>
+                    <span class="quick-chip" onclick="setAndRunCommand('ስለ መጽሐፈ ሄኖክ ስድስቱ የፀሐይ ደጆችና ፫፻፷፬ቱ ቀናት ቀመር አስረዳኝ')">🌌 ስድስቱ የፀሐይ ደጆች (መጽሐፈ ሄኖክ)</span>
+                    <span class="quick-chip" onclick="setAndRunCommand('የንግድ በረከትና የሀብት ማግኛ አስማተ ባርክኤል ጸሎትና ድርጊት ንገረኝ')">💰 የንግድና የሀብት በረከት (ባርክኤል)</span>
+                    <span class="quick-chip" onclick="setAndRunCommand('ራስን ከክፉ ዓይንና ከጠላት መከላከያ ሰይፈ ሥላሴና ዐቃቤ ርእስ ጸሎት')">🛡️ ሰይፈ ሥላሴ (መከላከያ)</span>
+                    <span class="quick-chip" onclick="setAndRunCommand('የአቡሻህር አበገደ የቁጥር ቀመርና የ12ቱ ኮከቦች ምስጢር')">✨ አቡሻህር የኮከብ ቀመር (አበገደ)</span>
+                </div>
+
+                <!-- Universal Command Output Box -->
+                <div id="universalResultBox" class="result-box hidden">
+                    <div class="result-header">
+                        <h3 id="universalResultTitle">የጥበቡ መልስና የመጽሐፉ ሪፈረንስ</h3>
+                        <button class="btn-voice" onclick="speakText(currentUniversalVoiceText)">🔊 ቃሉን አድምጥ</button>
+                    </div>
+
+                    <!-- Authentic Manuscript Citation Card -->
+                    <div class="manuscript-ref-card">
+                        <div class="manuscript-ref-header">
+                            <span class="ref-tag">📖 ቀጥተኛ የመጽሐፍ ሪፈረንስ (Direct Citation)</span>
+                            <span id="universalRefType" class="ref-type-badge spell">ድግምትና ጸሎት</span>
+                        </div>
+                        <div id="universalRefBook" class="ref-book-title">መፍትሔ ሥራይ ወአስማተ ሰሎሞን</div>
+                        <div class="ref-details">
+                            <span id="universalRefChapter">ምዕራፍ፡ ፫ (የብርሃን ጋሻ)</span>
+                            <span id="universalRefPage">ገጽ / ፎሊዮ፡ ገጽ ፵፪ (ብራና ቁጥር ፻፲፰)</span>
+                            <span id="universalRefSource">የመዛግብት ምንጭ፡ የደብረ ሊባኖስ ገዳም ጥንታዊ ብራና</span>
+                        </div>
+                    </div>
+
+                    <div class="parchment-block">
+                        <h4>የመጽሐፉ የግእዝ ቃልና ድግምት/ጸሎት (Ge'ez Script)፡</h4>
+                        <p id="universalGeezText" class="geez-text"></p>
+                    </div>
+
+                    <div class="analysis-block">
+                        <h4>የአማርኛ ትርጉምና ሙሉ እውቀት (Wisdom & Knowledge)፡</h4>
+                        <p id="universalExplanationText"></p>
+                    </div>
+
+                    <div class="materials-block">
+                        <h4>የታዘዘው ተግባራዊ ድርጊትና አፈጻጸም (Prescribed Action & Ritual)፡</h4>
+                        <ul id="universalActionList"></ul>
+                    </div>
+
+                    <p id="universalTimingText" class="advisory-text"></p>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="feature-grid">
+                <div class="feature-card" onclick="switchTab('zodiac')">
+                    <div class="card-icon">🌟</div>
+                    <h3>የኮከብ ቆጠራና ዕጣ ፈንታ</h3>
+                    <p>በአቡሻህር አበገደ ቀመር የጠያቂውና የእናት ስም ተሰልቶ የኮከብ፣ የንጥረ-ነገር፣ የመልአክና የዕጣ ፈንታ ትንታኔ።</p>
+                    <span class="card-link">ቀመር ይመልከቱ →</span>
+                </div>
+
+                <div class="feature-card" onclick="switchTab('bahire_hasab')">
+                    <div class="card-icon">☀️</div>
+                    <h3>ባሕረ ሐሳብ (የፀሐይና ጨረቃ ቀመር)</h3>
+                    <p>የዓመተ ዓለም፣ የወንጌላዊ፣ የወንበር፣ የአበቅቴ፣ የመጥቅዕና የተንቀሳቃሾች አጽዋማት ፍጹም የቀን ስሌት።</p>
+                    <span class="card-link">የዘመን ቀመር →</span>
+                </div>
+
+                <div class="feature-card" onclick="switchTab('love')">
+                    <div class="card-icon">❤️</div>
+                    <h3>መስተፋቅርና ፍቅር</h3>
+                    <p>የልብ ስምምነት፣ የትዳር ሰላምና የማስታረቅ ጥበብ ከመጻሕፍት ቀመር፣ ከግእዝ ቃልና ከተፈጥሮ ዕፀዋት ጋር።</p>
+                    <span class="card-link">የፍቅር ስምምነት →</span>
+                </div>
+
+                <div class="feature-card" onclick="switchTab('healing')">
+                    <div class="card-icon">🌿</div>
+                    <h3>የፈውስ ዕፀዋት (መጽሐፈ ፈውስ)</h3>
+                    <p>ዳማከሴ፣ ጤናአዳም፣ ግራዋ፣ ጦስኝና ሌሎች ጥንታዊ ዕፀዋት አዘገጃጀት፣ አጠቃቀምና የፈውስ ጸሎታት።</p>
+                    <span class="card-link">ዕፀዋትን ይመልከቱ →</span>
+                </div>
+
+                <div class="feature-card" onclick="switchTab('oracle')">
+                    <div class="card-icon">📜</div>
+                    <h3>የጥበብ ጠያቂና መፍትሔ ሥራይ</h3>
+                    <p>ከዓይነ ጥላ፣ ከድግምት፣ ለንግድ በረከትና ለዕውቀት ጥያቄዎችን የሚመልስ የጥንት ብራና ማውጫ።</p>
+                    <span class="card-link">ጥያቄ ያቅርቡ →</span>
+                </div>
+
+                <div class="feature-card" onclick="switchTab('enoch')">
+                    <div class="card-icon">🌌</div>
+                    <h3>መጽሐፈ ሄኖክ</h3>
+                    <p>ስድስቱ የፀሐይ ደጆች፣ ሰባቱ ሰማያት፣ አሥራ ሁለቱ ነፋሳትና የሰማይ ብርሃናት ታላቁ የሄኖክ ቀመር።</p>
+                    <span class="card-link">ምዕራፋትን ያንብቡ →</span>
+                </div>
+            </div>
+
+            <!-- Publishing & System Verification Card -->
+            <div class="publish-status-box">
+                <div class="status-header">
+                    <span class="status-indicator live">●</span>
+                    <h3>ቀላልና ነፃ የፐብሊሺንግ ማረጋገጫ (Publishing Status)</h3>
+                </div>
+                <div class="status-grid">
+                    <div class="status-item">
+                        <span class="status-label">የድረ ገጽ ሁኔታ</span>
+                        <span class="status-val text-success">✓ በቀጥታ ክፍት ነው (Live & Running)</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">የአንድሮይድ መተግበሪያ (APK)</span>
+                        <span class="status-val text-success">✓ የተዘጋጀና የሚወርድ (tinte_tibeb.apk - 22MB)</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">የባንክ ክፍያ ድጋፍ</span>
+                        <span class="status-val text-success">✓ ቴሌብር፣ ንግድ ባንክ፣ አዋሽ፣ አቢሲኒያ ተገናኝቷል</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">ድምፅ አንባቢ (TTS)</span>
+                        <span class="status-val text-success">✓ ንቁ ነው (የግእዝና አማርኛ ንባብ)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ZODIAC TAB -->
+        <section id="tab-zodiac" class="tab-pane">
+            <div class="pane-header">
+                <h2>✨ የአቡሻህር ኮከብ ቆጠራና ዕጣ ፈንታ</h2>
+                <p>የጠያቂውን ስም እና የእናት ስም ያስገቡ፤ ጥንታዊው አበገደ ቀመር ኮከብዎን፣ ንጥረ-ነገርዎንና መልአክዎን ይገልጣል።</p>
+            </div>
+
+            <div class="form-card">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="zodiacSeeker">የጠያቂው ስም (ለምሳሌ፡ ሰሎሞን)</label>
+                        <input type="text" id="zodiacSeeker" placeholder="ሙሉ ስም ያስገቡ">
+                    </div>
+                    <div class="form-group">
+                        <label for="zodiacMother">የእናት ስም (ለምሳሌ፡ ወለተ ጊዮርጊስ)</label>
+                        <input type="text" id="zodiacMother" placeholder="የእናት ስም ያስገቡ">
+                    </div>
+                </div>
+                <button class="btn btn-gold btn-wide" onclick="calculateZodiac()">ኮከቤን ፈልግና ተናገር</button>
+            </div>
+
+            <div id="zodiacResult" class="result-box hidden">
+                <div class="result-header">
+                    <h3 id="zodiacSignTitle">ኮከብ፡ ሐመል (አሪስ)</h3>
+                    <button class="btn-voice" onclick="speakText(currentZodiacVoiceText)">
+                        🔊 አድምጥ
+                    </button>
+                </div>
+
+                <!-- Authentic Manuscript Citation Card -->
+                <div class="manuscript-ref-card">
+                    <div class="manuscript-ref-header">
+                        <span class="ref-tag">📖 ቀጥተኛ የመጽሐፍ ሪፈረንስ</span>
+                        <span class="ref-type-badge wisdom">የከዋክብት ቀመር (እውቀት)</span>
+                    </div>
+                    <div class="ref-book-title" id="zodiacRefBook">መጽሐፈ አቡሻህር ወቀመረ ከዋክብት</div>
+                    <div class="ref-details">
+                        <span id="zodiacRefChapter">ምዕራፍ፡ አዕማደ ኮከብ ወአበገደ</span>
+                        <span id="zodiacRefPage">ገጽ፡ ገጽ ፴፪-፴፭ (ብራና ቁጥር ፪፻፲)</span>
+                        <span id="zodiacRefSource">ምንጭ፡ የደብረ ሊባኖስ ገዳም ጥንታዊ መዝገብ</span>
+                    </div>
+                </div>
+
+                <div class="zodiac-details">
+                    <div class="zodiac-chip"><strong>ንጥረ ነገር፡</strong> <span id="zodiacElement">እሳት</span></div>
+                    <div class="zodiac-chip"><strong>ፕላኔት/ኮከብ፡</strong> <span id="zodiacPlanet">መርክብ (ማርስ)</span></div>
+                    <div class="zodiac-chip"><strong>ጠባቂ መልአክ፡</strong> <span id="zodiacAngel">ቅዱስ ሚካኤል</span></div>
+                    <div class="zodiac-chip"><strong>ዕድለኛ ዕንቁ፡</strong> <span id="zodiacStone">ቀይ አልማዝ</span></div>
+                    <div class="zodiac-chip"><strong>የተስማማ ቀለም፡</strong> <span id="zodiacColor">ቀይና ወርቃማ</span></div>
+                </div>
+                <div class="parchment-block">
+                    <h4>የጥንቱ ጸሎት/አስማት (ግእዝ)፡</h4>
+                    <p id="zodiacPrayer" class="geez-text"></p>
+                </div>
+                <div class="analysis-block">
+                    <h4>የሰውዬው ባሕርይና ዕጣ ፈንታ፡</h4>
+                    <p id="zodiacPersonality"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. BAHIRE HASAB TAB -->
+        <section id="tab-bahire_hasab" class="tab-pane">
+            <div class="pane-header">
+                <h2>☀️ ባሕረ ሐሳብ (የፀሐይና የጨረቃ ቀመር)</h2>
+                <p>የኢትዮጵያ ዓመተ ምሕረት ያስገቡ፤ ዓመተ ዓለም፣ ወንጌላዊ፣ ወንበር፣ አበቅቴ፣ መጥቅዕና በዓላትን ያሰላል።</p>
+            </div>
+
+            <div class="form-card">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="hasabYear">ዓመተ ምሕረት (ዓ/ም)</label>
+                        <input type="number" id="hasabYear" value="2017" min="1" max="9999">
+                    </div>
+                </div>
+                <button class="btn btn-gold btn-wide" onclick="calculateBahireHasab()">ቀመሩን አስላ</button>
+            </div>
+
+            <div id="hasabResult" class="result-box">
+                <!-- Dynamically filled -->
+            </div>
+        </section>
+
+        <!-- 4. LOVE HARMONY TAB -->
+        <section id="tab-love" class="tab-pane">
+            <div class="pane-header">
+                <h2>❤️ መስተፋቅርና የፍቅር ስምምነት ቀመር</h2>
+                <p>በጥንቱ መጽሐፍ መሠረት የፍቅር፣ የትዳር ሰላምና የስምምነት ቀመር ለማውጣት አስፈላጊውን መረጃ ያሟሉ።</p>
+            </div>
+
+            <div class="form-card">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="loveSeekerName">የጠያቂው ስም (Seeker)</label>
+                        <input type="text" id="loveSeekerName" placeholder="ለምሳሌ፡ ሰሎሞን">
+                    </div>
+                    <div class="form-group">
+                        <label for="loveSeekerMother">የጠያቂው እናት ስም</label>
+                        <input type="text" id="loveSeekerMother" placeholder="ለምሳሌ፡ ወለተ ማርያም">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="loveTargetName">የተፈላጊው/ዋ ስም (Target)</label>
+                        <input type="text" id="loveTargetName" placeholder="ለምሳሌ፡ ሳባ">
+                    </div>
+                    <div class="form-group">
+                        <label for="loveTargetMother">የተፈላጊው/ዋ እናት ስም</label>
+                        <input type="text" id="loveTargetMother" placeholder="ለምሳሌ፡ ወለተ ጊዮርጊስ">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="loveIntention">የጥያቄው ዓላማ</label>
+                    <select id="loveIntention">
+                        <option value="የትዳር ሰላምና ፍቅር">የትዳር ሰላምና ፍቅር (Marriage Peace)</option>
+                        <option value="የልብ ስምምነትና መግባባት">የልብ ስምምነትና መግባባት (Mutual Harmony)</option>
+                        <option value="የተጣላ ማስታረቅ">የተጣላ ማስታረቅ (Reconciliation)</option>
+                        <option value="የፍቅር መስህብ (መስተፋቅር)">የፍቅር መስህብ - መስተፋቅር (Love Attraction)</option>
+                    </select>
+                </div>
+                <button class="btn btn-gold btn-wide" onclick="calculateLove()">የመስተፋቅር ቀመር አውጣና ተናገር</button>
+            </div>
+
+            <div id="loveResult" class="result-box hidden">
+                <div class="result-header">
+                    <h3 id="loveScoreTitle">የስምምነት ውጤት፡ 96%</h3>
+                    <button class="btn-voice" onclick="speakText(currentLoveVoiceText)">
+                        🔊 ቃሉን አድምጥ
+                    </button>
+                </div>
+
+                <!-- Authentic Manuscript Citation Card -->
+                <div class="manuscript-ref-card">
+                    <div class="manuscript-ref-header">
+                        <span class="ref-tag">📖 ቀጥተኛ የመጽሐፍ ሪፈረንስ</span>
+                        <span class="ref-type-badge spell">መስተፋቅርና ስምምነት (ጸሎትና ድግምት)</span>
+                    </div>
+                    <div class="ref-book-title" id="loveRefBook">መጽሐፈ ተፋቅሮ ወመስተፋቅር ዘጥንት</div>
+                    <div class="ref-details">
+                        <span id="loveRefChapter">ምዕራፍ፡ ፬ (ስምምነተ ልብ ወተፋቅሮ)</span>
+                        <span id="loveRefPage">ገጽ፡ ገጽ ፲፰-፳፩ (ብራና ቁጥር ፷፪)</span>
+                        <span id="loveRefSource">ምንጭ፡ የሐይቅ እስጢፋኖስ ገዳም ጥንታዊ መዝገብ</span>
+                    </div>
+                </div>
+
+                <p id="loveElements" class="subtitle"></p>
+                <div class="parchment-block">
+                    <h4>የመጽሐፉ የግእዝ ቀመር ቃል (የጸሎት አስማት)፡</h4>
+                    <p id="loveGeez" class="geez-text"></p>
+                </div>
+                <div class="analysis-block">
+                    <h4>ትርጓሜው፡</h4>
+                    <p id="loveMeaning"></p>
+                </div>
+                <div class="materials-block">
+                    <h4>የሚያስፈልጉ የተፈጥሮ ነገሮች (ዕፀዋትና ሽቶ)፡</h4>
+                    <ul id="loveMaterials"></ul>
+                </div>
+                <p id="loveAdvisory" class="advisory-text"></p>
+            </div>
+        </section>
+
+        <!-- 5. HEALING HERBS TAB -->
+        <section id="tab-healing" class="tab-pane">
+            <div class="pane-header">
+                <h2>🌿 የፈውስ ዕፀዋት (መጽሐፈ ፈውስ)</h2>
+                <p>የኢትዮጵያ ጥንታዊ የፈውስ ዕፀዋት፤ አዘገጃጀት፣ አጠቃቀም፣ መድኃኒትነትና የመጻሕፍት ጸሎታት።</p>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" id="herbSearchInput" placeholder="በዕፅ ስም ወይም በበሽታ ዓይነት ይፈልጉ (ለምሳሌ፡ ዳማከሴ፣ ሆድ፣ ጉንፋን...)" oninput="filterHerbs()">
+            </div>
+
+            <div id="herbListGrid" class="herb-grid">
+                <!-- Dynamically filled with herbs -->
+            </div>
+        </section>
+
+        <!-- 6. ORACLE TAB -->
+        <section id="tab-oracle" class="tab-pane">
+            <div class="pane-header">
+                <h2>📜 የጥበብ ጠያቂና መፍትሔ ሥራይ</h2>
+                <p>የጥንቱ መጻሕፍት የሚመልሱትን ጥያቄ ይጠይቁ፤ ከዓይነ ጥላ፣ ከድግምት፣ ለሀብት፣ ለዕውቀትና ለጉዞ ሰላም መልስ ያግኙ።</p>
+            </div>
+
+            <div class="form-card">
+                <div class="form-group">
+                    <label for="oracleCategory">የጥበቡ ምድብ</label>
+                    <select id="oracleCategory">
+                        <option value="መፍትሔ ሥራይ">መፍትሔ ሥራይ (ከድግምትና ክፉ መንፈስ መከላከያ)</option>
+                        <option value="መስተፋቅርና ፍቅር">መስተፋቅርና ፍቅር (የፍቅርና የልብ ስምምነት)</option>
+                        <option value="ሀብትና ንግድ">ሀብትና ንግድ (የበረከትና የሥራ ስኬት)</option>
+                        <option value="ዕውቀትና ጥናት">ዕውቀትና ጥናት (የአእምሮ ብሩህነትና የማስታወስ)</option>
+                        <option value="ፈውስና ጤና">ፈውስና ጤና (የሥጋና የነፍስ ደዌ መፈወሻ)</option>
+                        <option value="የመንገድ ሰላም">የመንገድ ሰላም (የጉዞና የፈተና መከላከያ)</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="oracleSeeker">የጠያቂው ስም</label>
+                        <input type="text" id="oracleSeeker" placeholder="የጠያቂው ስም">
+                    </div>
+                    <div class="form-group">
+                        <label for="oracleMother">የእናት ስም</label>
+                        <input type="text" id="oracleMother" placeholder="የእናት ስም">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="oracleDetails">የተፈላጊው ሰው ስም ወይም የነገሩ ስም</label>
+                    <input type="text" id="oracleDetails" placeholder="ለምሳሌ፡ የንግድ ሥራ፣ የሰው ስም...">
+                </div>
+                <div class="form-group">
+                    <label for="oracleSpecific">ልዩ ጉዳይ ወይም ጥያቄዎን ይግለጹ</label>
+                    <textarea id="oracleSpecific" rows="3" placeholder="ጥያቄዎን በዝርዝር ይጻፉ..."></textarea>
+                </div>
+                <button class="btn btn-gold btn-wide" onclick="consultOracle()">ጥበቡን ከመጽሐፉ ጠይቅና ተናገር</button>
+            </div>
+
+            <div id="oracleResult" class="result-box hidden">
+                <div class="result-header">
+                    <h3 id="oracleResultTitle">የጥበቡ መልስና አስማተ ቀመር</h3>
+                    <button class="btn-voice" onclick="speakText(currentOracleVoiceText)">
+                        🔊 አድምጥ
+                    </button>
+                </div>
+
+                <!-- Authentic Manuscript Citation Card -->
+                <div class="manuscript-ref-card">
+                    <div class="manuscript-ref-header">
+                        <span class="ref-tag">📖 ቀጥተኛ የመጽሐፍ ሪፈረንስ</span>
+                        <span id="oracleRefTypeBadge" class="ref-type-badge spell">መፍትሔ ሥራይ (ድግምትና ጸሎት)</span>
+                    </div>
+                    <div class="ref-book-title" id="oracleRefBook">መጽሐፈ መፍትሔ ሥራይ ወአስማተ ሰሎሞን</div>
+                    <div class="ref-details">
+                        <span id="oracleRefChapter">ምዕራፍ፡ ፭ (መቅሰፍተ አጋንንት ወዓይነ ጥላ)</span>
+                        <span id="oracleRefPage">ገጽ፡ ገጽ ፵፭-፶ (ብራና ቁጥር ፻፲፰)</span>
+                        <span id="oracleRefSource">ምንጭ፡ ብሔራዊ ቤተ መዛግብትና ቤተ መጻሕፍት</span>
+                    </div>
+                </div>
+
+                <p id="oracleSeekerInfo" class="subtitle"></p>
+                <div class="parchment-block">
+                    <h4>የመጽሐፉ የግእዝ ድርሳን/አስማት፡</h4>
+                    <p id="oracleGeezScript" class="geez-text"></p>
+                </div>
+                <div class="analysis-block">
+                    <h4>ትርጓሜው፡</h4>
+                    <p id="oracleExplanation"></p>
+                </div>
+                <div class="materials-block">
+                    <h4>የሚታዘዙ ቅመሞችና ተግባራት፡</h4>
+                    <ul id="oraclePrescription"></ul>
+                </div>
+                <p id="oracleTiming" class="advisory-text"></p>
+            </div>
+        </section>
+
+        <!-- 7. ENOCH TAB -->
+        <section id="tab-enoch" class="tab-pane">
+            <div class="pane-header">
+                <h2>🌌 መጽሐፈ ሄኖክ (የሰማይ ብርሃናት ቀመር)</h2>
+                <p>በኢትዮጵያ ብራናዎች ተጠብቆ የቆየው ጥንታዊው የሄኖክ የሰማይ ምስጢራት፣ የፀሐይ ደጆችና የከዋክብት ዑደት።</p>
+            </div>
+
+            <div id="enochChaptersContainer" class="enoch-chapters">
+                <!-- Dynamically rendered -->
+            </div>
+        </section>
+
+        <!-- 8. PAYMENT & BANKING TAB -->
+        <section id="tab-payment" class="tab-pane">
+            <div class="pane-header">
+                <h2>💳 ክፍያና የባንክ ድጋፍ (ለፈጣሪው ገቢ ማስገኛ)</h2>
+                <p>ከኢትዮጵያ ባንኮች ጋር በቀጥታ የተገናኘ፤ የጥበብ ነጥቦችን በመግዛት የጥንተ ጥበብ አገልግሎትን ይደግፉ።</p>
+            </div>
+
+            <div class="payment-overview">
+                <div class="balance-card">
+                    <span>ያለዎት ቀሪ የጥበብ ነጥብ</span>
+                    <strong id="userCreditDisplay">10 ነጥቦች</strong>
+                </div>
+            </div>
+
+            <h3 class="section-title">1. የጥበብ ፓኬጅ ይምረጡ</h3>
+            <div class="packages-grid">
+                <div class="pkg-card" onclick="selectPackage('starter', 50, 15)">
+                    <h4>የጥበብ ጅማሮ</h4>
+                    <div class="pkg-price">50 ብር</div>
+                    <p>15 ነጥቦች ለኮከብ ቆጠራና ለጥያቄዎች</p>
+                </div>
+                <div class="pkg-card selected" onclick="selectPackage('monthly', 150, 50)">
+                    <div class="pkg-tag">ተመራጭ</div>
+                    <h4>የወር የጥበብ ማህደር</h4>
+                    <div class="pkg-price">150 ብር</div>
+                    <p>50 ነጥቦች + ሙሉ የፈውስና የሄኖክ መዝገብ</p>
+                </div>
+                <div class="pkg-card" onclick="selectPackage('lifetime', 350, 9999)">
+                    <div class="pkg-tag gold">ዘለቄታ</div>
+                    <h4>ጠቅላላ የጥንተ ጥበብ ፍቃድ</h4>
+                    <div class="pkg-price">350 ብር</div>
+                    <p>ያልተገደበ የጥበብ ጥያቄና ቀመር</p>
+                </div>
+            </div>
+
+            <h3 class="section-title">2. መክፈያ ባንክ ይምረጡ</h3>
+            <div class="banks-grid">
+                <div class="bank-card selected" onclick="selectBank('telebirr', '0911223344', 'ጥንተ ጥበብ', '*127#')">
+                    <div class="bank-logo telebirr">Telebirr</div>
+                    <h4>ቴሌብር (Telebirr)</h4>
+                    <p class="acc-num">0911223344</p>
+                    <small>USSD: *127#</small>
+                </div>
+                <div class="bank-card" onclick="selectBank('cbe', '1000234567891', 'ጥንተ ጥበብ ማዕከል', '*847#')">
+                    <div class="bank-logo cbe">CBE</div>
+                    <h4>የኢትዮጵያ ንግድ ባንክ</h4>
+                    <p class="acc-num">1000234567891</p>
+                    <small>USSD: *847#</small>
+                </div>
+                <div class="bank-card" onclick="selectBank('awash', '01320876543200', 'ጥንተ ጥበብ', '*901#')">
+                    <div class="bank-logo awash">Awash</div>
+                    <h4>አዋሽ ባንክ (Awash Birr)</h4>
+                    <p class="acc-num">01320876543200</p>
+                    <small>USSD: *901#</small>
+                </div>
+                <div class="bank-card" onclick="selectBank('abyssinia', '88997766', 'ጥንተ ጥበብ', '*815#')">
+                    <div class="bank-logo abyssinia">BOA</div>
+                    <h4>ባንክ ኦፍ አቢሲኒያ</h4>
+                    <p class="acc-num">88997766</p>
+                    <small>USSD: *815#</small>
+                </div>
+            </div>
+
+            <div class="form-card payment-confirm-card">
+                <h3>3. የክፍያ ማረጋገጫ ቁጥር (Transaction Ref)</h3>
+                <p id="paymentInstructions">በቴሌብር ወደ 0911223344 150 ብር ከላኩ በኋላ ከባንኩ የደረሰዎትን የማረጋገጫ ቁጥር ያስገቡ።</p>
+                <div class="form-group">
+                    <input type="text" id="txRefInput" placeholder="ምሳሌ፡ FT24389XXX">
+                </div>
+                <button class="btn btn-gold btn-wide" onclick="submitPayment()">ክፍያውን አረጋግጥና ነጥብ ጨምር</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- User Registration & Profile Modal -->
+    <div id="userModal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 id="modalTitle">ወደ ጥንተ ጥበብ መመዝገቢያ</h3>
+                <button class="btn-close" onclick="closeUserModal()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="regFullName">ሙሉ ስም</label>
+                    <input type="text" id="regFullName" placeholder="ሙሉ ስም ያስገቡ">
+                </div>
+                <div class="form-group">
+                    <label for="regPhone">ስልክ ቁጥር</label>
+                    <input type="tel" id="regPhone" placeholder="09XXXXXXXX">
+                </div>
+                <div class="form-group">
+                    <label for="regGender">ፆታ</label>
+                    <select id="regGender">
+                        <option value="ወንድ">ወንድ (Male)</option>
+                        <option value="ሴት">ሴት (Female)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">የራስዎን ይለፍ ቃል (Password) ያስገቡ</label>
+                    <input type="password" id="regPassword" placeholder="የይለፍ ቃል">
+                </div>
+                <button class="btn btn-gold btn-wide" onclick="saveUserRegistration()">ተመዝገብና ግባ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Free APK Download Modal -->
+    <div id="downloadModal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>📲 የአንድሮይድ መተግበሪያውን በነፃ አውርድ</h3>
+                <button class="btn-close" onclick="closeDownloadModal()">✕</button>
+            </div>
+            <div class="modal-body text-center">
+                <p>የጥንተ ጥበብ የሞባይል አፕሊኬሽን ያለምንም ክፍያ በቀጥታ ወደ ስልክዎ ማውረድ ይችላሉ።</p>
+                <div class="apk-info-box">
+                    <strong>ጥንተ ጥበብ (Tinte Tibeb) v1.0</strong>
+                    <span>የፋይል መጠን፡ ~22 MB | አንድሮይድ 7.0+</span>
+                </div>
+                <a href="tinte_tibeb.apk" download="ጥንተ_ጥበብ.apk" class="btn btn-gold btn-wide btn-large">
+                    📥 አፑን አውርድ (Direct Download APK)
+                </a>
+                <div class="install-steps">
+                    <h4>በስልክ ላይ የመጫን ቅደም ተከተል፡</h4>
+                    <ol>
+                        <li>ፋይሉ ሲወርድ ይክፈቱት (Open downloaded APK)።</li>
+                        <li>ስልኩ "Install unknown apps" ከጠየቀ "Allow / ፍቀድ" ይበሉ።</li>
+                        <li>"Install / ጫን" የሚለውን በመንካት በጥቂት ሴኮንድ ውስጥ ይጠቀሙ!</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="app-footer">
+        <p>© 2026 ጥንተ ጥበብ - የአባቶቻችን ጥንታዊ ጥበብና መጻሕፍት | መጽሐፈ ሄኖክ • አቡሻህር • መጽሐፈ ፈውስ • መስተፋቅር</p>
+        <p class="footer-links">
+            <a href="tinte_tibeb.apk" download="ጥንተ_ጥበብ.apk">አፑን በነፃ አውርድ (APK)</a> • 
+            <a href="#" onclick="openUserModal(); return false;">መለያ አስተዳድር</a> • 
+            <a href="#" onclick="switchTab('payment'); return false;">ለፈጣሪው ድጋፍ አድርግ</a>
+        </p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
