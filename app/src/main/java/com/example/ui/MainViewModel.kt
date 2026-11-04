@@ -18,7 +18,8 @@ enum class Screen {
     ENOCH,
     PAYMENT,
     HISTORY,
-    PROFILE
+    PROFILE,
+    GLOBAL_GRIMOIRES
 }
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {

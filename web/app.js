@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initBahireHasab();
     renderHerbs(herbsData);
     renderEnochChapters();
+    renderGlobalGrimoires();
     updatePaymentInstructions();
 });
 
@@ -160,6 +161,72 @@ function speakText(text) {
 // ===================================================================
 
 const manuscriptCorpus = [
+    {
+        keywords: ["ጥይት", "አረር", "ነፍጥ", "ጥይት እንዳይመታ", "መክስተ ደመና", "ሐጹረ መስቀል", "ጦርነት", "ጥይት መከላከያ"],
+        type: "የጥይት መከላከያ ጋሻ (ጸሎትና ድግምት)",
+        typeClass: "spell",
+        book: "መጽሐፈ ሐጹረ መስቀል ወአስማተ ጥይት ዘጥንት",
+        chapter: "ምዕራፍ ፯፡ መክስተ ደመና ወመከላከየ አረር",
+        page: "ገጽ ፸፪ (ብራና ቁጥር ፫፻፲)",
+        source: "የደብረ ሊባኖስ ገዳም ጥንታዊ መዛግብት",
+        geez: `በስመ አብ ወወልድ ወመንፈስ ቅዱስ አሐዱ አምላክ፤
+ጸሎት በእንተ መስተሐምም ወመክስተ ደመና ዘጥይት፤
+በስመ ያህ፣ ኤልሻዳይ፣ ጸባኦት፣ አማኑኤል፤
+ከመ ኢይቅረበኒ አረር ወነደ እሳት፤
+ይኩን ጥይት ከመ ማይ ወከመ ሐመድ በቅድሜየ፤
+በኃይለ መስቀሉ ለክርስቶስ ይትሰበር ኩሉ ነፍጥ ወመንፈሰ ሞት፤
+ቅዱስ ሚካኤል ወገብርኤል ይኩኑኒ ጋሻ ወዋልታ ለዓለመ ዓለም፤ አሜን።`,
+        explanation: `ጥይትና አረር ወደ ሰውዬው እንዳይደርስ አቅጣጫውን እንዲስት ወይም እንደ ውኃና አፈር እንዲቀዘቅዝ በጥንታውያን አባቶች የተዘጋጀ ታላቅ የመስቀል ጋሻና መክስተ ደመና ነው።`,
+        action: [
+            "ዕፀ ደብዳቤ ወይም ዕፀ መሰውር በንጹሕ ቀይ ቆዳ ተሰፍቶ በግራ ክንድ ወይም በአንገት ማሰር",
+            "ማለዳ ከመውጣት በፊት ጸሎቱን ፯ (ሰባት) ጊዜ አንብቦ በሦስቱ ጣቶች ማማተብ",
+            "በንጽሕና መመላለስና ለተቸገረ ሰው ምጽዋት ማድረግ"
+        ],
+        timing: "ማለዳ ፀሐይ ስትወጣ ወደ ምሥራቅ አቅጣጫ ዞሮ ማድረስ።"
+    },
+    {
+        keywords: ["ስለት", "ሰይፍ", "ቢላዋ", "ካራ", "ጦር", "ስለታማ", "ስለታማ ነገሮች እንዳይመቱ", "አፍልጣ", "ሰይፈ ሥላሴ"],
+        type: "የስለት መከላከያ ጋሻ (ጸሎትና አስማት)",
+        typeClass: "spell",
+        book: "መጽሐፈ ሰይፈ ሥላሴ ወአስማተ አፍልጣ ዘጥንት",
+        chapter: "ምዕራፍ ፱፡ መከላከየ ስለት ወአፍልጣ",
+        page: "ገጽ ፶፰ (ብራና ቁጥር ፻፵፭)",
+        source: "የዋልድባ ገዳም ጥንታዊ ብራና",
+        geez: `በስመ ሥላሴ ቅዱስ፤ አብ እሳት፣ ወልድ እሳት፣ መንፈስ ቅዱስ እሳት፤
+በዛቲ አስማተ ስለት ኢይምታዐኒ ሰይፍ ወኩናት፣ ሾተል ወካራ፤
+ይኩን ኩሉ ብረት ከመ ሰም በቅድመ እሳት፤
+በስመ ዑራኤል መልአክ ዘይመልሕ ሰይፈ እሳት፤
+ዕቀበኒ ወአድኅነኒ እምኩሉ አፈ ስለት ወእምነዳደ ብረት፤ አሜን።`,
+        explanation: `ከሰይፍ፣ ከቢላዋ፣ ከጦርና ከማንኛውም ስለታማ ብረት መከላከያ ጥንታዊ ጋሻ፤ ብረት እንደ ሰም እንዲቀልጥና አካልን እንዳይቆርጥ የሚጸለይ የታመነ ቃል ነው።`,
+        action: [
+            "ዕፀ አፍልጣ ሥር በንጽሕና ቆርጦ ከጥቁር ዕጣን ጋር በወይራ ዘይት አፍልቶ አካልን መቀባት",
+            "ቃሉን ፫ ጊዜ በንጹሕ ውኃ ላይ አንብቦ ማለዳ መጠጣት",
+            "በክንድ ወይም በኪስ በክታብ መያዝ"
+        ],
+        timing: "ማለዳ 1:00 ሰዓት ወይም ወደ አደገኛ ስፍራ ከመጓዝ በፊት።"
+    },
+    {
+        keywords: ["ዕፀ መሰውር", "መሰወር", "መሰወሪያ", "ማምለጫ", "ሄኖክ", "ኤልያስ", "መከወን", "ድብቅ", "እፀመሰውር"],
+        type: "ዕፀ መሰውርና ማምለጫ (ምስጢር)",
+        typeClass: "spell",
+        book: "መጽሐፈ ዕፀ መሰውር ወኅቡዓት ዘሄኖክ ወኤልያስ",
+        chapter: "ምዕራፍ ፬፡ አስማተ መሰውር ወተከውኖ",
+        page: "ገጽ ፴፱ (ብራና ቁጥር ፹፪)",
+        source: "የጣና ቂርቆስ ገዳም ጥንታዊ መዝገብ",
+        geez: `በስመ አብ ወወልድ ወመንፈስ ቅዱስ አሐዱ አምላክ፤
+ጸሎት በእንተ ዕፀ መሰውር፤
+በከመ ከወንኮሙ ለሄኖክ ወለኤልያስ እምዓይነ ኃጥአን፤
+ከማሁ ሰውረኒ እምዓይነ ፀር ወጸላኢ፤
+በስመ አስተርእዮ ወኅቡዕ፤ አዖ፣ ፈዖ፣ ኤልሻዳይ፤
+ዕፅም ዓይኖሙ ወዕበስ አእምሮቶሙ ከመ ኢይርአዩኒ ወኢያእምሩኒ ለዓለም፤ አሜን።`,
+        explanation: `በጠላት ወይም በአደጋ ጊዜ ከክፉ ዓይንና ከፈላጊዎች መሰወሪያ ጥንታዊ ምስጢር፤ ዓይናቸው እንዳያይና አእምሮታቸው እንዳያስተውል የሚያደርግ ጥበብ ነው።`,
+        action: [
+            "የዕፀ መሰውር ቅጠልና ሥር በንጽሕና ተቆርጦ ከሰሊጥ ዘይት ጋር ግንባርንና ዓይንን መቀባት",
+            "ቃሉን በለሆሳስ ፯ ጊዜ ደግሞ በአደጋው ወቅት መራመድ",
+            "በክታብ ተሰፍቶ በአንገት ወይም በኪስ መያዝ"
+        ],
+        timing: "በዕለተ ዓርብ ማታ ወይም በአስቸጋሪ ሰዓት።"
+    },
     {
         keywords: ["ዓይነ ጥላ", "መፍትሔ ሥራይ", "ድግምት", "ሰይጣን", "ክፉ መንፈስ", "ጭንቀት", "መተት", "ቡዳ", "ዛር", "ጥላ"],
         type: "ድግምትና ጸሎት (መፍትሔ ሥራይ)",
@@ -812,69 +879,179 @@ function calculateLove() {
 const herbsData = [
     {
         id: "damakese",
-        name: "ዳማከሴ",
-        geez: "ዕፀ ሳቤቅ (ሳቤቅ)",
+        name: "ዕፀ ሳቤዕ (ዳማከሴ)",
+        geez: "ዕፀ ሳቤቅ (ሳቤዕ)",
         scientific: "Ocimum lamiifolium",
-        ref: "መጽሐፈ ፈውስ ገጽ ፸፬",
-        ailments: "ብርድና ጉንፋን (Flu)፣ የራስ ምታት (Migraine)፣ የዓይነ ጥላ ድካም (Heavy Aura)",
-        preparation: "ትኩስ የዳማከሴ ቅጠሎችን በእጅ በማሸት ጭማቂውን ማውጣት ወይም በሙቅ ውሃ ውስጥ ዘፍዝፎ መታጠን።",
-        application: "ጭማቂውን በአፍንጫ ማሽተት፣ ግንባርን ማሸት እና እንፋሎቱን መታጠን።",
-        prayer: "በስመ አብ ወወልድ ወመንፈስ ቅዱስ፤ ፈዋሴ ዱያን ሩፋኤል፤ በዝንቱ ዕፅ ፈውስ ሕማመ ርእስ ወዓይነ ጥላ ዘሰብእ።"
+        vernacular: "ዳማከሴ፤ በአንዳንድ ገዳማትና አውራጃዎች «ሐረግ ሬሳ» ወይም «ሸክና» ይባላል።",
+        habitat: "በኢትዮጵያ ወይናደጋና ደጋማ ክፍለ ሀገራት (ሸዋ፣ ጎንደር፣ ወሎ፣ ጎጃም፣ ደብረ ሊባኖስና ሐረርጌ)፤ በቤት አጥርና በወንዝ ዳርቻዎች።",
+        harvesting: "በዕለተ ሰኞ ወይም ሐሙስ ማለዳ ፀሐይ ሳትወጣ በንጽሕና ሆኖ፤ በብር ሳንቲም ወይም በነጭ ዕጣን ዋጋ ከፍሎ፤ «በስመ አብ ወወልድ ወመንፈስ ቅዱስ አሐዱ አምላክ፤ ፈዋሴ ዱያን ሩፋኤል በዝንቱ ዕፅ ፈውስ ሕማመ ርእስ ወዓይነ ጥላ» እያሉ በግራ እጅ መቁረጥ።",
+        ref: "መጽሐፈ ፈውስ ወዕፀዋት ዘጥንት ገጽ ፸፬ (ብራና ቁጥር ፳፰)፣ የሐይቅ እስጢፋኖስ ገዳም",
+        ailments: "ብርድና ጉንፋን (Flu)፣ የራስ ምታት (Migraine)፣ የዓይነ ጥላ ድካምና የጨለማ ጭስ (Heavy Aura)፣ የአፍንጫ መታፈን",
+        preparation: "ትኩስ የዳማከሴ ቅጠሎችን በእጅ አሽቶ ጭማቂውን ማውጣት፤ ወይም በሙቅ ውኃ ውስጥ ዘፍዝፎ ማፍላት።",
+        application: "ጭማቂውን በአፍንጫ ማሽተት፣ ግንባርንና አናት ማሸት፣ እንፋሎቱን መታጠንና በጥቂቱ ከንጹሕ ማር ጋር ማለዳ በባዶ ሆድ መውሰድ።",
+        prayer: "በስመ አብ ወወልድ ወመንፈስ ቅዱስ አሐዱ አምላክ፤ ጸሎት በእንተ ፈውሰ ርእስ ወዓይነ ጥላ፤ ፈዋሴ ዱያን ቅዱስ ሩፋኤል ሊቀ መላእክት፤ በዝንቱ ዕፀ ሳቤቅ ፈውስ ሕማመ ርእስ፣ ዓይነ ጥላ ወኩሎ ፃዕረ ሥጋ ዘገብርከ፤ በከመ ፈወስኮ ለጦቢት እምደዌሁ ከማሁ ፈውስ ሕሙማነ በኃይለ መስቀሉ ለክርስቶስ፤ አሜን።",
+        translation: "የራስ ሕመም እና የዓይነ ጥላ መፈወሻ ጸሎት፤ ቅዱስ ሩፋኤል ሆይ፤ በዚህ በዕፀ ሳቤዕ የራስ ምታትን፣ የዓይነ ጥላን ድካምና የስጋ ጭንቀትን ሁሉ ከባሪያህ ላይ አርቅ፤ ጦቢትን ከዓይኑ ደዌ እንደፈወስከው እንዲሁ በክርስቶስ መስቀል ኃይል ፈውስ፤ አሜን።",
+        safety: "ለአይን በቀጥታ እንዳይገባ መጠንቀቅ፤ እንፋሎቱ በሚታጠንበት ወቅት ራስን በልብስ መሸፈን።"
+    },
+    {
+        id: "patos",
+        name: "ዕፀ ጳጦስ",
+        geez: "ዕፀ ጳጦስ ዘደብረ ሲና",
+        scientific: "Euphorbia abyssinica / Datura hybrid",
+        vernacular: "በባህላዊ አጠራር «አስተናጋሪ»፣ «ቁልቋል ዘመድ» ወይም «ዕፀ ገደም» በመባል ይታወቃል።",
+        habitat: "በቆላማና ወይናደጋ ገደላማ ሥፍራዎች፣ በተከዜ ሸለቆ፣ በዋልድባ ገዳማት ጠረፍ፣ በአባይ በርሃና በሸዋ ገደሎች ውስጥ።",
+        harvesting: "በዕለተ ሐሙስ ሌሊት 10:00 ሰዓት ገመናውን በጨርቅ ሸፍኖ፤ ጸሎተ ሰሎሞንን ደግሞ፤ ጥቁር ዕጣን አጭሶና በብር ሳንቲም ዋጋ ሰጥቶ በስመ ሥላሴ በስለት መቁረጥ።",
+        ref: "መጽሐፈ ጳጦስ ወአስማተ አጋንንት ገጽ ፶፩ (ብራና ቁጥር ፻፲፪)፣ የዋልድባ ገዳም",
+        ailments: "የክፉ መንፈስና የዛር ቁራኛ ማባረር፣ የዓይነ ጥላና የድግምት መከላከያ፣ የእጅና የእግር ውጋት",
+        preparation: "ሥሩንና ቅርፊቱን በደረቁ በጥላ ሥር አድርቆ በመውቀጥ በደቃቁ ማድቀቅ፤ ከወይራ ዘይት ወይም ከእርጎ ጋር ማዋሃድ።",
+        application: "ለዓይነ ጥላና ለመስተፋቅር በክንድ ወይም በአንገት በክታብ ማሰር፤ ወይም በጥቂቱ በከሰል ላይ በማጨስ መታጠን።",
+        prayer: "በስመ አብ ወወልድ ወመንፈስ ቅዱስ አሐዱ አምላክ፤ ጸሎት በእንተ ዕፀ ጳጦስ፤ በስመ ያህ፣ ኤልሻዳይ፣ ጸባኦት፤ በከመ አርአይኮ ለሙሴ በደብረ ሲና፤ ከማሁ አርእየኒ ኃይለከ በዛቲ ዕፅ፤ ይርሐቁ አጋንንት ወኩሎሙ መናፍስተ ጽልመት እምላዕለ ዝንቱ ስም፤ በኃይለ ዝንቱ ቃል ይትፈታሕ ኩሉ መሠሪያት፤ አሜን።",
+        translation: "ስለ ዕፀ ጳጦስ የተነገረ ጸሎት፤ በደብረ ሲና ለሙሴ ኃይልህን እንዳሳየህ እንዲሁ በዚህ ዕፅ ኃይልህን ግለጥ፤ አጋንንትና የጨለማ መናፍስት ሁሉ ከዚህ ሰው ላይ ይራቁ፤ በቃሉ ኃይል ድግምት ሁሉ ይፈታ፤ አሜን።",
+        safety: "በአፍ ወደ ሆድ እንዳይገባ በጥብቅ ይጠንቀቁ፤ ለመታጠንና በክታብ ለመያዝ ብቻ እንዲውል ይመከራል።"
+    },
+    {
+        id: "debdabe",
+        name: "ዕፀ ደብዳቤ",
+        geez: "ዕፀ ደብዳቤ ወመክስተ ኃይል",
+        scientific: "Stephania abyssinica",
+        vernacular: "በባህላዊ አጠራር «ዶግ»፣ «ሐረግ ምድር» ወይም «የምድር ሙጃ» ይባላል።",
+        habitat: "በደጋና ወይናደጋ ተራራማ ሥፍራዎች (ሰሜን ተራሮች፣ ደብረ ታቦር፣ መንዝ፣ ዋሸራና የደብረ ሊባኖስ ጥቅጥቅ ደኖች)።",
+        harvesting: "በዕለተ ረቡዕ ማታ ወይም ሐሙስ ማለዳ ንጹሕ ነጭ ልብስ ለብሶ፤ በ፯ የዕጣን ፍሬ አክብሮ፤ ጸሎተ መፍትሔ ሥራይን ፫ ጊዜ ደግሞ በንጽሕና ሥሩን መቆፈር።",
+        ref: "መጽሐፈ መፍትሔ ሥራይ ወዕፀ ደብዳቤ ገጽ ፴፱ (ብራና ቁጥር ፷፯)፣ የጣና ቂርቆስ ገዳም",
+        ailments: "የጥይትና የስለት መከላከያ ጋሻ፣ የዓይነ ጥላና የመተት መፍትሔ፣ ድንገተኛ ፍርሃትና ጭንቀት ማጥፋት",
+        preparation: "የዕፀ ደብዳቤን ሥር በደንብ አጥቦ ማድረቅ፤ በትንሹ ደቁሶ በንጹሕ ውኃ ማጥለል ወይም በቆዳ ሰፍቶ ማዘጋጀት።",
+        application: "ጥቂት ጠብታ በውኃ አጥልሎ ጠዋት በባዶ ሆድ መቅመስ፤ ለጥበቃ ደግሞ በቀይ ቆዳ ተሰፍቶ በክንድ ወይም በአንገት ይታሰራል።",
+        prayer: "በስመ አብ ወወልድ ወመንፈስ ቅዱስ፤ ጸሎተ ዕፀ ደብዳቤ፤ በስመ አልፋ ወዖሜጋ፤ ይትከደን ሰላም ወይቁም ጋሻ ዲበ ነፍስየ ወሥጋየ፤ ከመ ኢይቅረበኒ አረር፣ ሰይፍ ወኩናት፤ በስመ ቅዱስ ሚካኤል ወገብርኤል ይሠረር ጋሻ መለኮት፤ አሜን።",
+        translation: "የዕፀ ደብዳቤ ጸሎት፤ ጥይት፣ ሰይፍና ጦር ወደ እኔ እንዳይቀርብ በነፍሴና በሥጋዬ ላይ መንፈሳዊ ጋሻ ይቁም፤ በቅዱስ ሚካኤልና ገብርኤል ስም የመለኮት ጥበቃ ይጽና፤ አሜን።",
+        safety: "በመጠን ብቻ መጠቀም፤ ንጽሕናን መጠበቅ ግዴታ ነው።"
+    },
+    {
+        id: "mesewer",
+        name: "ዕፀ መሰውር",
+        geez: "ዕፀ መሰውር ዘሄኖክ ወኤልያስ",
+        scientific: "Clutia lanceolata / Ceropegia",
+        vernacular: "በባህላዊ አጠራር «ምስርች»፣ «እንጭብር» ወይም «የአጋም ዘመድ» ተብሎ ይጠራል።",
+        habitat: "በጥንታዊ ገዳማት ደኖች (ዋልድባ፣ ጣና ቂርቆስ፣ ማኅበረ ሥላሴ፣ ባሌና ሰሜን ሸለቆዎች) ውስጥ።",
+        harvesting: "በዕለተ ዓርብ ማታ በ፯:00 ሰዓት ወይም እሑድ ፀሐይ ሳትወጣ፤ ፯ ጊዜ «ከመ ሄኖክ ወኤልያስ ከውለኒ እምዓይነ ፀር» እያሉ በብር ሳንቲም ዋጋ ሰጥቶ መቁረጥ።",
+        ref: "መጽሐፈ ዕፀ መሰውር ወኅቡዓት ገጽ ፳፯ (ብራና ቁጥር ፹፪)፣ የጣና ቂርቆስ ገዳም",
+        ailments: "ከጠላትና ከአደጋ መሰወሪያ፣ ከክፉ ዓይንና ከተንኮል መጠበቂያ፣ በችግር ጊዜ መንገድ ማቅናት",
+        preparation: "ሥሩንና ቅጠሉን በንጽሕና ወቅጦ ከጥቁር ሰሊጥ ዘይትና ከንጹሕ የወይራ ዘይት ጋር ማዋሃድ።",
+        application: "ግንባርንና ዓይንን በጥቂቱ መቀባት፤ እንዲሁም በኪስ ወይም በአንገት በክታብ መያዝ።",
+        prayer: "በስመ አብ ወወልድ ወመንፈስ ቅዱስ አሐዱ አምላክ፤ ጸሎት በእንተ ዕፀ መሰውር፤ በከመ ከወንኮሙ ለሄኖክ ወለኤልያስ እምዓይነ ኃጥአን፤ ከማሁ ሰውረኒ እምዓይነ ፀር ወጸላኢ፤ አዖ፣ ፈዖ፣ ኤልሻዳይ፤ ዕፅም ዓይኖሙ ወዕበስ አእምሮቶሙ ከመ ኢይርአዩኒ፤ አሜን።",
+        translation: "የመሰወሪያ ጸሎት፤ ሄኖክንና ኤልያስን ከዓመፀኞች ዓይን እንደሰወርካቸው እንዲሁ እኔን ከጠላት ዓይን ሰውረኝ፤ እንዳያዩኝና እንዳያስተውሉኝ ዓይናቸውን ጋርድ፤ አሜን።",
+        safety: "ለክፉ ነገር ወይም ለስርቆት ፈጽሞ መጠቀም የተከለከለ ነው፤ ከጠላት አደጋ ለመዳን ብቻ የታዘዘ ነው።"
+    },
+    {
+        id: "libanos",
+        name: "ዕፀ ሊባኖስ (ነጭ ዕጣን ዛፍ)",
+        geez: "ዕፀ ሊባኖስ ወዕጣነ ሳባ",
+        scientific: "Boswellia papyrifera",
+        vernacular: "በባህላዊ አጠራር «የነጭ ዕጣን ዛፍ» ወይም «ጥንጅት» ይባላል።",
+        habitat: "በተከዜ ሸለቆ፣ በወጋግ፣ በመተማ፣ በደቡብ ኦሮሚያና በሰሜን ድንጋያማ ሸለቆዎች።",
+        harvesting: "በዕለተ ሐሙስ ጠዋት ፀሐይ ስትወጣ፤ ጸሎተ ባርክኤልን ደግሞ፤ የዛፉን ሙጫና ቅርፊት በንጹሕ ቢላዋ መግፈፍ።",
+        ref: "መጽሐፈ ሊባኖስ ወመዓዛ ሠናይ ገጽ ፵፫ (ብራና ቁጥር ፺፬)፣ የደብረ ዳሞ ገዳም",
+        ailments: "የመንፈስ ጭንቀትና ፍርሃት፣ የመተንፈሻ አካላት ማጽዳት፣ የቤትና የሰውነት በረከት መሳብ",
+        preparation: "ሙጫውን ከነጭ ከርቤ ጋር በማደባለቅ ማድረቅና በንጹሕ እሳት ላይ ማጨስ።",
+        application: "ጭሱን በክፍል ውስጥ ማሰራጨትና ማለዳ ማታ በመጠኑ መታጠን።",
+        prayer: "በስመ አብ ወወልድ ወመንፈስ ቅዱስ፤ ይዕርግ ጸሎትየ ከመ ዕጣን በቅድሜከ፤ ወይርሐቅ እምቤቴ ኩሉ መንፈሰ ጽልመት ወደዌ፤ በስመ ዑራኤል መልአክ አብርህ ውስተ ልብየ፤ አሜን።",
+        translation: "ጸሎቴ በፊትህ እንደ ዕጣን መዓዛ ትድረስ፤ የጨለማና የበሽታ መንፈስ ሁሉ ከቤቴ ይራቅ፤ በቅዱስ ዑራኤል ስም በልቤ ውስጥ ብርሃን ይብራ፤ አሜን።",
+        safety: "አስም ያለባቸው ሰዎች ከጭሱ ርቀው እንዲቀመጡ ማድረግ።"
+    },
+    {
+        id: "yodit",
+        name: "ዕፀ ዮዲት (ቀጠጥና)",
+        geez: "ዕፀ ዮዲት ወመፍትሔ መርዝ",
+        scientific: "Echinops ellenbeckii",
+        vernacular: "በባህላዊ አጠራር «ቀጠጥና»፣ «አቱች» ወይም «የሆድ መድኃኒት» ይባላል።",
+        habitat: "በጎጃም፣ ጎንደር፣ ወሎና ሸዋ እርጥበታማ ወንዝ ዳርቻዎችና ገደላማ ሜዳዎች።",
+        harvesting: "በዕለተ ሰኞ ማለዳ፤ ፱ ጊዜ አቡነ ዘበሰማያት ጸሎት አድርሶ በንጹሕ ቢላ መቆፈር።",
+        ref: "መጽሐፈ ፈውስ ወቀጠጥና ገጽ ፷፪ (ብራና ቁጥር ፶፭)፣ የጎንደር ባዕታ ቤተ መዛግብት",
+        ailments: "የሆድ መርዝና የተበላ ነገር ማርከሻ፣ የሆድ ቁርጠትና ድርቀት፣ የመርዘኛ እባብና ጊንጥ ንክሻ ማዳኛ",
+        preparation: "ሥሩን በደንብ አጥቦ በሙቀጫ መውቀጥ፤ በወተት ወይም በጥቂት ማር ማፍላት።",
+        application: "ጠዋት በባዶ ሆድ አንድ ሲኒ መጠጣት፤ ለንክሻ ከሆነ ደግሞ በቁስሉ ላይ ማሰር።",
+        prayer: "በስመ አብ ወወልድ ወመንፈስ ቅዱስ፤ በስመ እግዚአብሔር ፈዋሲ፤ አውፅእ ኩሎ መርዘ ከይሲ ወሕማመ ከርሥ፤ ይኩን ፈውስ ለነፍስ ወለሥጋ፤ አሜን።",
+        translation: "ፈዋሽ በሆነው በእግዚአብሔር ስም፤ የእባቡን መርዝና የሆዱን ሕመም ሁሉ አስወግድ፤ ለነፍስና ለሥጋ ፈውስ ይሁን፤ አሜን።",
+        safety: "መጠኑ እንዳይበዛ በአንድ ሲኒ ብቻ መገደብ።"
     },
     {
         id: "tena_adam",
-        name: "ጤናአዳም",
+        name: "ዕፀ ሕይወት (ጤናአዳም)",
         geez: "ዕፀ ሕይወት ዘአዳም",
         scientific: "Ruta chalepensis",
-        ref: "መጽሐፈ ፈውስ ገጽ ፸፭",
+        vernacular: "ጤናአዳም (የአዳም ጤና)",
+        habitat: "በኢትዮጵያ ደጋና ወይናደጋ ክፍለ ሀገራት በሙሉ በጓሮ የሚበቅል ተወዳጅ ዕፅ።",
+        harvesting: "በዕለተ እሑድ ወይም ረቡዕ ማለዳ በንጹሕ እጅ መቅጠፍ።",
+        ref: "መጽሐፈ ፈውስ ገጽ ፸፭ (ብራና ቁጥር ፳፰)፣ የሐይቅ እስጢፋኖስ ገዳም",
         ailments: "የሆድ ቁርጠት (Stomach ache)፣ የክፉ ዓይን መከላከያ (Evil eye)፣ የምግብ አለመፈጨት",
         preparation: "የጤናአዳም ፍሬውንና ቅጠሉን በሻይ ወይም በቡና ውስጥ መክተት፣ ወይም በንጹሕ ውኃ በጥብጦ ማጣራት።",
-        application: "ጥቂት ጠብታ በሞቀ መጠጥ ውስጥ ጠጥቶ ማሳለፍ።",
-        prayer: "አስማተ ፈውስ ዘአቡሻህር፤ ኤሎሄ፣ ኤሎሄ፤ አድኅኖ ለገብርከ እምደዌ ከርሥ ወእምዓይነ ባላ።"
+        application: "ጥቂት ጠብታ በሞቀ መጠጥ ውስጥ ጠጥቶ ማሳለፍ፤ ፍሬውን በኪስ መያዝ።",
+        prayer: "አስማተ ፈውስ ዘአቡሻህር፤ ኤሎሄ፣ ኤሎሄ፣ ኤልሻዳይ፤ አድኅኖ ለገብርከ እምደዌ ከርሥ ወእምዓይነ ባላ ወእምኩሉ ፍላጻ ፀር፤ አሜን።",
+        translation: "አምላክ ሆይ፣ ሁሉን ቻይ አምላክ ሆይ፤ ባሪያህን ከሆድ በሽታ፣ ከሰው ክፉ ዓይንና ከጠላት ፍላጻ ጠብቀው ፈውሰውም፤ አሜን።",
+        safety: "ነፍሰ ጡር እናቶች በከፍተኛ መጠን እንዳይወስዱት በጥብቅ ይመከራል።"
     },
     {
         id: "girawa",
-        name: "ግራዋ",
-        geez: "ዕፀ መራር",
+        name: "ዕፀ መራር (ግራዋ)",
+        geez: "ዕፀ መራር ወፈውሰ ከርሥ",
         scientific: "Vernonia amygdalina",
-        ref: "መጽሐፈ ፈውስ ገጽ ፸፮",
-        ailments: "የሆድ ትላትል (Intestinal parasites)፣ የጉበትና የሆድ ጽዳት (Liver cleanse)",
-        preparation: "የግራዋን ቅጠል በሙቀጫ መውቀስ፣ ጭማቂውን በማጣራት ከማር ጋር ማዋሃድ።",
-        application: "ጠዋት በባዶ ሆድ በትንሽ ማንኪያ መውሰድ።",
-        prayer: "በስመ አብ ወወልድ ወመንፈስ ቅዱስ፤ በስመ እግዚአብሔር ፈዋሲ፤ አውፅእ ኩሎ ሕማመ ከርሥ ወመርዘ ከይሲ።"
+        vernacular: "ግራዋ",
+        habitat: "በሁሉም የኢትዮጵያ ክልሎች በወይናደጋና ቆላማ መስኮች በብዛት ይገኛል።",
+        harvesting: "በማንኛውም ቀን ጠዋት በንጹሕ እጅ መቅጠፍ።",
+        ref: "መጽሐፈ ፈውስ ገጽ ፸፮ (ብራና ቁጥር ፳፰)፣ የሐይቅ እስጢፋኖስ ገዳም",
+        ailments: "የሆድ ትላትል (Intestinal parasites)፣ የወባ ንዳድ (Malaria)፣ የጉበትና የሆድ ጽዳት፣ የቆዳ ቁስል",
+        preparation: "የግራዋን ቅጠል በሙቀጫ መውቀጥ፤ ጭማቂውን በማጣራት ከማር ጋር ማዋሃድ፤ ለቁስል ቅጠሉን ማሸት።",
+        application: "ጠዋት በባዶ ሆድ በትንሽ ማንኪያ መውሰድ፤ ለቆዳ ቁስል ማሰር።",
+        prayer: "በስመ እግዚአብሔር አምላከ ጽድቅ፤ በዛቲ ዕፅ መራር አሰስል ኩሎ መርዐተ ደዌ ወፃዕረ ሥጋ፤ ወአውፅእ ኩሎ ሕማመ ከርሥ፤ አሜን።",
+        translation: "በእውነተኛው አምላክ ስም፤ በዚህ መራር ዕፅ የደዌን ሥርና የስጋን ጭንቀት ሁሉ አስወግድ፤ የሆድንም ሕመም አውጣ፤ አሜን።",
+        safety: "መራርነቱ ከፍተኛ ስለሆነ በልክ ብቻ መጠቀም።"
     },
     {
         id: "tosign",
-        name: "ጦስኝ",
-        geez: "ዕፀ ሰናይት",
+        name: "ዕፀ ዕፍረት (ጦስኝ)",
+        geez: "ዕፀ ዕፍረት ወሰናይት",
         scientific: "Thymus serrulatus",
-        ref: "መጽሐፈ ፈውስ ገጽ ፸፯",
-        ailments: "የሳልና የጉሮሮ ሕመም (Cough & throat)፣ የደም ግፊት መረጋጋት",
-        preparation: "የደረቀውን ወይም ትኩሱን የጦስኝ ቅጠል በፈላ ውሃ ውስጥ ማፍላት።",
-        application: "እንደ ሻይ አድርጎ በቀን ሁለት ጊዜ ማጣጣም።",
-        prayer: "በስመ ሥላሴ፤ አብርድ እሳተ ደዌ እምጉርዔ ወእምደረተ ገብርከ።"
+        vernacular: "ጦስኝ",
+        habitat: "በሰሜንና ደቡብ ወሎ፣ ጎንደር፣ ሰሜን ሸዋ ከፍተኛ ደጋማ ተራሮች (ደብረ ሲና፣ ጉና፣ መንዝ)።",
+        harvesting: "በጸደይና በበጋ ወራት በንጽሕና ተሰብስቦ በጥላ ሥር ማድረቅ።",
+        ref: "መጽሐፈ ፈውስ ገጽ ፸፯ (ብራና ቁጥር ፳፰)፣ የሐይቅ እስጢፋኖስ ገዳም",
+        ailments: "የደረቅ ሳልና የጉሮሮ ሕመም (Cough)፣ የደረት ውጋት (Chest tightness)፣ የደም ግፊት ማረጋጋት",
+        preparation: "የደረቀውን ወይም ጥሬውን ጦስኝ በፈላ ውሃ ውስጥ አንተክትኮ ከንጹሕ ማር ጋር ማዋሃድ።",
+        application: "እንደ ሻይ በሞቀ ሁኔታ ጠዋትና ማታ መጠጣት።",
+        prayer: "እግዚአብሔር ዘፈጠረ ዕፀዋተ ለፈውስ፤ አጽንዕ ሥጋየ ወአስተንፍስ ሕይወት ውስተ ጉሮሮየ፤ ወአብርድ እሳተ ደዌ፤ አሜን።",
+        translation: "ዕፅዋትን ለፈውስ የፈጠርክ ጌታ ሆይ፤ ሥጋዬን አበርታ፣ ጉሮሮዬንም አረጋጋ፤ የደዌንም እሳት አቀዝቅዝ፤ አሜን።",
+        safety: "ለአብዛኛው ሰው እጅግ ተስማሚና የጎንዮሽ ጉዳት የሌለው ድንቅ የደጋ ዕፅ ነው።"
     },
     {
         id: "eret",
-        name: "እሬት",
-        geez: "ዕፀ ጽጌ",
-        scientific: "Aloe debrana",
-        ref: "መጽሐፈ ፈውስ ገጽ ፸፰",
-        ailments: "የቆዳ ቁስል፣ ፎረፎር፣ የሆድ ድርቀትና የቆዳ ልስላሴ",
-        preparation: "የእሬቱን ጄል በመፋቅ ከንጹሕ ውኃ ወይም ከማር ጋር መቀላቀል።",
-        application: "በተጎዳው የቆዳ ክፍል ላይ በቀን ሁለት ጊዜ መቀባት።",
-        prayer: "በስመ አብ ወወልድ ወመንፈስ ቅዱስ፤ አንጽሐኒ እምደዌ ቈላ ወአሕይወኒ በምሕረትከ።"
+        name: "ዕፀ ሰበር (እሬት)",
+        geez: "ዕፀ ሰበር ወጽጌ",
+        scientific: "Aloe debrana / abyssinica",
+        vernacular: "እሬት (የደጋና የቆላ እሬት)",
+        habitat: "በቆላና ወይናደጋ ድንጋያማ ቦታዎች፣ በሸለቆዎችና በረሃማ ሥፍራዎች።",
+        harvesting: "በቢላዋ የሥጋ ቅጠሉን በጥንቃቄ ቆርጦ የውስጡን ጄል ማውጣት።",
+        ref: "መጽሐፈ ፈውስ ገጽ ፸፰ (ብራና ቁጥር ፳፰)፣ የሐይቅ እስጢፋኖስ ገዳም",
+        ailments: "የእሳት ቃጠሎ (Burns)፣ የቆዳ ድርቀትና ብጉር፣ የፀጉር መነቀልና ድካም፣ የቆዳ ቁስል",
+        preparation: "የእሬቱን ወላጅ ቆዳ ልጦ የውስጡን ጥርት ያለ ጄል መውሰድ፤ ከማር ጋር ማዋሃድ።",
+        application: "በተጎዳው ቆዳ ወይም በጭንቅላት ቆዳ ላይ መቀባት።",
+        prayer: "በስመ አብ ወወልድ ወመንፈስ ቅዱስ፤ ከመ ጽጌረዳ ወከመ ፅድ አሐድስ ወራዙትየ ወፈውሰኒ እምነዳደ እሳት ወእምደዌ ቈላ፤ አሜን።",
+        translation: "እንደ ጽጌሬዳና እንደ ፅድ ጎልማሳነቴን አድስ፤ ከቃጠሎና ከቆዳ ደዌም ፈውሰኝ፤ አሜን።",
+        safety: "ጥርት ያለውን ጄል ብቻ መጠቀም፤ ቢጫውን መራር ፈሳሽ ማስወገድ።"
     },
     {
         id: "kerbe",
-        name: "ከርቤ",
-        geez: "ዕፀ ከርቤ ቅዱስ",
-        scientific: "Commiphora myrrha",
-        ref: "መጽሐፈ ፈውስ ገጽ ፸፱",
-        ailments: "የመንፈስ ጭንቀት፣ ፀረ-ተባይ፣ የድድና የጉሮሮ በሽታ",
+        name: "ከርቤና ነጭ ዕጣን",
+        geez: "ዕፀ ከርቤ ቅዱስ ወዕጣነ ሳባ",
+        scientific: "Commiphora myrrha & Boswellia",
+        vernacular: "ከርቤና ነጭ ዕጣን",
+        habitat: "በሶማሌ ክልል፣ በደቡብ ኦሮሚያና በተከዜ ሸለቆዎች።",
+        harvesting: "በዕለተ ሐሙስ ማለዳ ሙጫውን በንጹሕ ቢላ መግፈፍ።",
+        ref: "መጽሐፈ ፈውስ ገጽ ፸፱ (ብራና ቁጥር ፳፰)፣ የሐይቅ እስጢፋኖስ ገዳም",
+        ailments: "የመንፈስ ጭንቀት፣ ፀረ-ተባይ፣ የድድና የጉሮሮ በሽታ፣ ክፉ መንፈስ ማባረር",
         preparation: "ከርቤውን በከሰል ላይ ማጨስ ወይም በውኃ ዘፍዝፎ መጉመጥመጥ።",
         application: "ጭሱን መታጠንና ቤትን ማጠን።",
-        prayer: "መዓዛ ሠናይት ከመ ከርቤ፤ አርሕቅ ጸላዕተ ወፈኑ ሰላመ ውስተ ቤተ ዚአየ።"
+        prayer: "መዓዛ ሠናይት ከመ ከርቤ፤ አርሕቅ ጸላዕተ ወፈኑ ሰላመ ውስተ ቤተ ዚአየ፤ አሜን።",
+        translation: "መዓዛው እንደ ከርቤ ያማረ ጌታ ሆይ፤ ጠላትን አርቅልኝ፣ በቤቴም ውስጥ ሰላምን ላክ፤ አሜን።",
+        safety: "አስም ያለባቸው ሰዎች ከጭሱ ርቀው እንዲቀመጡ ማድረግ።"
     }
 ];
 
@@ -882,19 +1059,36 @@ function renderHerbs(list) {
     const grid = document.getElementById("herbListGrid");
     if (!grid) return;
     grid.innerHTML = list.map(herb => `
-        <div class="herb-card" onclick="speakText('${herb.name}። ግእዝ፡ ${herb.geez}። የሚያክመው፡ ${herb.ailments}። አዘገጃጀት፡ ${herb.preparation}። ሪፈረንስ፡ ${herb.ref}')">
+        <div class="herb-card" onclick="speakText('${herb.name}። በባህላዊ አጠራር፡ ${herb.vernacular}። የሚገኝበት፡ ${herb.habitat}። አቆራረጡ፡ ${herb.harvesting}። አዘገጃጀቱ፡ ${herb.preparation}። ሪፈረንስ፡ ${herb.ref}')">
             <div class="herb-card-header">
                 <h4>${herb.name}</h4>
-                <button class="btn-voice" onclick="event.stopPropagation(); speakText('${herb.name}። ${herb.preparation}። ${herb.prayer}')">🔊 አድምጥ</button>
+                <button class="btn-voice" onclick="event.stopPropagation(); speakText('${herb.name}። ${herb.vernacular}። ${herb.prayer}')">🔊 አድምጥ</button>
             </div>
             <div class="herb-geez">ግእዝ፡ ${herb.geez} | ${herb.scientific}</div>
-            <div style="font-size:0.75rem; color:var(--gold-light); margin-bottom:6px;">📖 ሪፈረንስ፡ ${herb.ref}</div>
-            <div class="herb-ailments"><strong>ደዌዎች፡</strong> ${herb.ailments}</div>
-            <p style="font-size:0.85rem; color:var(--text-parchment); margin-bottom:8px;"><strong>አዘገጃጀት፡</strong> ${herb.preparation}</p>
-            <div class="parchment-block" style="margin-bottom:0; padding:10px;">
-                <small style="color:var(--crimson-light); font-weight:bold;">የብራናው ጸሎት፡</small>
-                <div style="font-size:0.85rem; color:var(--gold-light);">${herb.prayer}</div>
+            <div style="font-size:0.75rem; color:var(--gold-light); margin-bottom:8px;">📖 ሪፈረንስ፡ ${herb.ref}</div>
+            
+            <div style="background:var(--bg-dark); padding:10px; border-radius:6px; margin-bottom:10px; font-size:0.85rem; line-height:1.6;">
+                <div style="color:var(--gold-light); font-weight:600;">🏷️ በባህላዊ አጠራር፡ <span style="color:var(--text-parchment); font-weight:normal;">${herb.vernacular}</span></div>
+                <div style="color:var(--gold-light); font-weight:600; margin-top:4px;">📍 የሚገኝበት አካባቢ፡ <span style="color:var(--text-parchment); font-weight:normal;">${herb.habitat}</span></div>
             </div>
+
+            <div class="herb-ailments"><strong>ደዌዎች፡</strong> ${herb.ailments}</div>
+            
+            <div style="font-size:0.85rem; color:var(--text-parchment); margin-bottom:8px; line-height:1.5;">
+                <strong style="color:var(--gold-light);">🌿 አቆራረጡ (Harvesting Ritual)፡</strong> ${herb.harvesting}
+            </div>
+
+            <div style="font-size:0.85rem; color:var(--text-parchment); margin-bottom:8px; line-height:1.5;">
+                <strong style="color:var(--gold-light);">🥣 አዘገጃጀትና አደራረግ፡</strong> ${herb.preparation} ${herb.application}
+            </div>
+
+            <div class="parchment-block" style="margin-bottom:8px; padding:10px;">
+                <small style="color:var(--crimson-light); font-weight:bold;">የብራናው ሙሉ ጸሎት (ግእዝ)፡</small>
+                <div style="font-size:0.85rem; color:var(--gold-light); margin-top:4px; line-height:1.6;">${herb.prayer}</div>
+                <small style="color:var(--text-dim); display:block; margin-top:4px;">ትርጉም፡ ${herb.translation}</small>
+            </div>
+
+            <small style="color:var(--crimson-light); display:block;">⚠️ ${herb.safety}</small>
         </div>
     `).join("");
 }
@@ -904,6 +1098,8 @@ function filterHerbs() {
     const filtered = herbsData.filter(h => 
         h.name.toLowerCase().includes(q) ||
         h.geez.toLowerCase().includes(q) ||
+        h.vernacular.toLowerCase().includes(q) ||
+        h.habitat.toLowerCase().includes(q) ||
         h.ailments.toLowerCase().includes(q)
     );
     renderHerbs(filtered);
@@ -929,7 +1125,7 @@ function consultOracle() {
 አስማተ ሰሎሞን ንጉሠ እስራኤል፤
 ኤልሻዳይ፣ ማኅቶት፣ ጸባኦት፣ አማኑኤል፤
 ይትፈታሕ ኩሉ ዕንቅፋት ወይሠረር ሰላም ዲበ ${seeker} ወልደ ${mother}፤
-በኃይለ መስቀል ይስበር አጋንንተ ፀላዕት ወይኩን ንጹሐ ከመ ብርሃነ ፀሐይ!`;
+በኃይለ መስቀል ይስበር አጋንንተ ፀላዕት ወይኩን ንጹሐ ከመ ብርሃነ ፀሐይ፤ አሜን።`;
 
     let explanation = `የ${category} ጥያቄዎ ከመጽሐፉ ተመርምሯል። ለ${seeker} እና ለ${mother} የተከፈተው የጥበብ መንገድ ብሩህነትን፣ የክፉ መንፈስ መፈታትንና የታሰበው ጉዳይ (${details}) በሰላም እንዲፈጸም የሚያመለክት ነው።`;
 
@@ -940,7 +1136,61 @@ function consultOracle() {
         "ይህን የግእዝ አስማተ ቀመር በንጹሕ ብራና ወይም ወረቀት መያዝ"
     ];
 
-    if (category === "መስተፋቅርና ፍቅር") {
+    if (category === "የጥይት መከላከያ") {
+        bookTitle = "መጽሐፈ ሐጹረ መስቀል ወአስማተ ጥይት ዘጥንት";
+        chapterName = "ምዕራፍ ፯፡ መክስተ ደመና ወመከላከየ አረር";
+        pageFolio = "ገጽ ፸፪ (ብራና ቁጥር ፫፻፲)";
+        typeName = "የጥይት መከላከያ ጋሻ (ድግምትና ጸሎት)";
+        typeClass = "spell";
+        geezScript = `በስመ አብ ወወልድ ወመንፈስ ቅዱስ አሐዱ አምላክ፤
+ጸሎት በእንተ መስተሐምም ወመክስተ ደመና ዘጥይት፤
+በስመ ያህ፣ ኤልሻዳይ፣ ጸባኦት፣ አማኑኤል፤
+ከመ ኢይቅረበኒ አረር ወነደ እሳት ዲበ ${seeker} ወልደ ${mother}፤
+ይኩን ጥይት ከመ ማይ ወከመ ሐመድ በቅድሜየ፤
+በኃይለ መስቀሉ ለክርስቶስ ይትሰበር ኩሉ ነፍጥ ወመንፈሰ ሞት፤
+ቅዱስ ሚካኤል ወገብርኤል ይኩኑኒ ጋሻ ወዋልታ ለዓለመ ዓለም፤ አሜን።`;
+        explanation = `በመጽሐፈ ሐጹረ መስቀል ገጽ ፸፪ መሠረት፤ ለ${seeker} ወልደ ${mother} ጥይት አቅጣጫውን እንዲስትና እንደ ውኃና አፈር እንዲቀዘቅዝ የታመነ የመስቀል ጋሻና መክስተ ደመና ጸንቷል።`;
+        prescriptions = [
+            "ዕፀ ደብዳቤ ወይም ዕፀ መሰውር በንጹሕ ቀይ ቆዳ ተሰፍቶ በግራ ክንድ ወይም በአንገት ማሰር",
+            "ማለዳ ከመውጣት በፊት ጸሎቱን ፯ ጊዜ አንብቦ በሦስቱ ጣቶች ማማተብ",
+            "በንጽሕና መመላለስና ለተቸገረ ሰው ምጽዋት ማድረግ"
+        ];
+    } else if (category === "የስለት መከላከያ") {
+        bookTitle = "መጽሐፈ ሰይፈ ሥላሴ ወአስማተ አፍልጣ ዘጥንት";
+        chapterName = "ምዕራፍ ፱፡ መከላከየ ስለት ወአፍልጣ";
+        pageFolio = "ገጽ ፶፰ (ብራና ቁጥር ፻፵፭)";
+        typeName = "የስለት መከላከያ ጋሻ (ጸሎትና አስማት)";
+        typeClass = "spell";
+        geezScript = `በስመ ሥላሴ ቅዱስ፤ አብ እሳት፣ ወልድ እሳት፣ መንፈስ ቅዱስ እሳት፤
+በዛቲ አስማተ ስለት ኢይምታዐኒ ሰይፍ ወኩናት፣ ሾተል ወካራ ዲበ ${seeker} ወልደ ${mother}፤
+ይኩን ኩሉ ብረት ከመ ሰም በቅድመ እሳት፤
+በስመ ዑራኤል መልአክ ዘይመልሕ ሰይፈ እሳት፤
+ዕቀበኒ ወአድኅነኒ እምኩሉ አፈ ስለት ወእምነዳደ ብረት፤ አሜን።`;
+        explanation = `በመጽሐፈ ሰይፈ ሥላሴ ገጽ ፶፰ እንደተመዘገበው፤ ከሰይፍ፣ ከቢላዋ፣ ከጦርና ከማንኛውም ስለታማ ብረት መከላከያ ጥንታዊ ጋሻ፤ ብረት እንደ ሰም እንዲቀልጥና አካልን እንዳይቆርጥ የተዘጋጀ ነው።`;
+        prescriptions = [
+            "ዕፀ አፍልጣ ሥር በንጽሕና ቆርጦ ከጥቁር ዕጣን ጋር በወይራ ዘይት አፍልቶ አካልን መቀባት",
+            "ቃሉን ፫ ጊዜ በንጹሕ ውኃ ላይ አንብቦ ማለዳ መጠጣት",
+            "በክንድ ወይም በኪስ በክታብ መያዝ"
+        ];
+    } else if (category === "ዕፀ መሰውር") {
+        bookTitle = "መጽሐፈ ዕፀ መሰውር ወኅቡዓት ዘሄኖክ ወኤልያስ";
+        chapterName = "ምዕራፍ ፬፡ አስማተ መሰውር ወተከውኖ";
+        pageFolio = "ገጽ ፴፱ (ብራና ቁጥር ፹፪)";
+        typeName = "ዕፀ መሰውርና ማምለጫ (ምስጢር)";
+        typeClass = "spell";
+        geezScript = `በስመ አብ ወወልድ ወመንፈስ ቅዱስ አሐዱ አምላክ፤
+ጸሎት በእንተ ዕፀ መሰውር፤
+በከመ ከወንኮሙ ለሄኖክ ወለኤልያስ እምዓይነ ኃጥአን፤
+ከማሁ ሰውረኒ ሊተ ለ${seeker} ወልደ ${mother} እምዓይነ ፀር ወጸላኢ፤
+በስመ አስተርእዮ ወኅቡዕ፤ አዖ፣ ፈዖ፣ ኤልሻዳይ፤
+ዕፅም ዓይኖሙ ወዕበስ አእምሮቶሙ ከመ ኢይርአዩኒ ወኢያእምሩኒ ለዓለም፤ አሜን።`;
+        explanation = `በመጽሐፈ ዕፀ መሰውር ገጽ ፴፱ መሠረት፤ በጠላት ወይም በአደጋ ጊዜ ከክፉ ዓይንና ከፈላጊዎች መሰወሪያ ጥንታዊ ምስጢር፤ ዓይናቸው እንዳያይና አእምሮታቸው እንዳያስተውል የሚያደርግ ጥበብ ነው።`;
+        prescriptions = [
+            "የዕፀ መሰውር ቅጠልና ሥር በንጽሕና ተቆርጦ ከሰሊጥ ዘይት ጋር ግንባርንና ዓይንን መቀባት",
+            "ቃሉን በለሆሳስ ፯ ጊዜ ደግሞ በአደጋው ወቅት መራመድ",
+            "በክታብ ተሰፍቶ በአንገት ወይም በኪስ መያዝ"
+        ];
+    } else if (category === "መስተፋቅርና ፍቅር") {
         bookTitle = "መጽሐፈ ተፋቅሮ ወሰላም ዘሰሎሞን";
         chapterName = "ምዕራፍ ፬፡ አስማተ ተፋቅሮ ወስምምነት";
         pageFolio = "ገጽ ፲፰ (ብራና ቁጥር ፷፪)";
@@ -1153,3 +1403,155 @@ function submitPayment() {
 function closeDownloadModal() {
     document.getElementById("downloadModal").classList.add("hidden");
 }
+
+// ===================================================================
+// 10. GLOBAL GRIMOIRES (ዓለም አቀፍ ጥንታውያን ድግምቶች)
+// ===================================================================
+
+const globalGrimoiresData = [
+    {
+        id: "key_of_solomon",
+        titleAmharic: "የሰሎሞን ታላቅ ቁልፍ (ክላቪኩላ ሰሎሞኒስ)",
+        titleOriginal: "Clavicula Salomonis (Key of Solomon)",
+        origin: "14ኛው - 15ኛው መቶ ክፍለ ዘመን (የጥንት ዕብራይስጥና ላቲን ቅጂ)",
+        language: "ዕብራይስጥ (Hebrew) እና ላቲን (Latin)",
+        dangerLevel: "እጅግ አደገኛና ከፍተኛ ጥንቃቄ የሚሻ (High Astral Potency)",
+        purpose: "የፕላኔቶችን መንፈሳዊ ኃይላት ማዘዣ፣ የመከላከያ ክበብ (Magic Circle) እና ፔንታክል ማተሚያ",
+        incantation: "«Per Adonai, Elohim, Agla, Tetragrammaton; O vos omnes spiritus, per virtutem horum nominum sacrorum obedite mihi et venite in pace!»",
+        translation: "«በአዶናይ፣ በኤሎሂም፣ በአግላና በቴትራግራማቶን ቅዱሳን የማይነገሩ ስሞች፤ እናንተ መንፈሳውያን ኃይላት ሆይ፣ በእነዚህ ቅዱሳን ስሞች ኃይል ታዘዙኝ፤ በሰላምም ቅረቡ!»",
+        rituals: [
+            "በድንግል ብራና ላይ በሮማን ጭማቂ ቀለም የሰሎሞንን ታላቅ ፔንታክል መሳል",
+            "ከኖራ ወይም ከነጭ ጨው የተሠራ የ፱ ጫማ (9-foot) የመከላከያ ክበብ መሬት ላይ መዘርጋት",
+            "የብር ወይም የመዳብ ቀለበት በግራ እጅ ጣት ማድረግ",
+            "በዕለተ ዓርብ ማታ በቬነስ (ዙህራ) ሰዓት ማዕጠንት እያጨሱ ቃሉን ማሰላሰል"
+        ],
+        warning: "ያለ መከላከያ ክበብ (Magic Circle) እና ያለ ንጽሕና ፈጽሞ እንዳይሞከር፤ አእምሮን ሊያናውጥ የሚችል ከፍተኛ የስነ-ልቦና እና የመንፈስ ጫና አለው።",
+        history: "በመካከለኛው ዘመን አውሮፓና በመካከለኛው ምሥራቅ የአይሁድ የካባላህ ሊቃውንት የተጠቀሙበት፤ በንጉሥ ሰሎሞን ጥበብ ላይ የተመሠረተ ታላቁ የዓለማችን ግሪሞየር ነው።",
+        seal: "✡ ⛤ CLAVICULA SALOMONIS ⛤ ✡"
+    },
+    {
+        id: "picatrix",
+        titleAmharic: "ጋያት አል-ሀኪም (ፒካትሪክስ)",
+        titleOriginal: "Ghayat al-Hakim / Picatrix",
+        origin: "10ኛው መቶ ክፍለ ዘመን (አንዳሉሲያና ባግዳድ - እስላማዊ ወርቃማ ዘመን)",
+        language: "ዐረብኛ (Arabic) እና ጥንታዊ ላቲን (Medieval Latin)",
+        dangerLevel: "ከፍተኛ የከዋክብትና የቁስ ውህደት አደጋ (Astrological Talismanic Magic)",
+        purpose: "የከዋክብትንና የፕላኔቶችን መንፈሳዊ ኃይል ወደ ብረት፣ ድንጋይና ቴልሰም የማውረድ ጥበብ",
+        incantation: "«Bismillahi al-Hakim; Ya Zuhal, Ya Mushtari, Ya Marikh; As'aluka bi-quwwati al-falak wa harakat al-nujum an tajliba li al-quwwah wa al-nasr al-a'zam!»",
+        translation: "«በጥበበኛው አምላክ ስም፤ አንተ ዙሐል (ሳተርን)፣ ሙሽተሪ (ጁፒተር) እና መሪሕ (ማርስ) ሆይ፤ በሰማያት ኃይልና በከዋክብት ሩጫ ታላቁን ኃይልና ድል ታጎናጽፉኝ ዘንድ እጠይቃለሁ!»",
+        rituals: [
+            "ፕላኔቶች በከፍታ ማማቸው (Exaltation) ላይ በሚገኙበት ትክክለኛ ሰዓት ማዘጋጀት",
+            "እንደየፕላኔቱ ብረት (ለምሳሌ ለሳተርን እርሳስ፣ ለፀሐይ ወርቅ፣ ለጨረቃ ብር) ቴልሰም መቅረጽ",
+            "የዕጣንና የከርቤ ቅልቅል እያጨሱ ምስራቅ ዞሮ ቃሉን ማዜም"
+        ],
+        warning: "በተሳሳተ የኮከብ ሰዓት ከተሰራ ተቃራኒ መከራና የጤና መታወክ ያስከትላል፤ የኮከብ አቆጣጠርን ጠንቅቆ ማወቅ ግድ ይላል።",
+        history: "በአረብኛ «ጋያት አል-ሀኪም» (የጠቢቡ ግብ) ተብሎ የተጻፈውና ወደ ላቲን «ፒካትሪክስ» ተብሎ የተተረጎመው ይህ መጽሐፍ የአውሮፓን የህዳሴ ጠቢባን ያነሳሳ የታሪክ መዝገብ ነው።",
+        seal: "☽ ☿ PICATRIX TALISMAN ♀ ☉"
+    },
+    {
+        id: "book_of_the_dead",
+        titleAmharic: "የግብፅ መጽሐፈ ሙታን (ፐርት ኤም ህሩ)",
+        titleOriginal: "Book of the Dead (Pert Em Hru - Going Forth by Day)",
+        origin: "1550 ቅድመ ክርስቶስ (ጥንታዊቷ ግብፅ - 18ኛው ሥርወ መንግሥት)",
+        language: "የጥንት ግብፅ ሂሮግሊፊክስ (Hieroglyphic)",
+        dangerLevel: "የከርሰ ምድርና የሌሊት ዓለም ምስጢር (Underworld Netherworld Gates)",
+        purpose: "በድኅረ ሞት ዓለም ጨለማን፣ እባቦችንና አጋንንትን ማሸነፊያ፣ የልብን ሚዛን ማለፊያ ጋሻ",
+        incantation: "«Nuk pu User, Nuk pu Ra; An-nek em hetemet; Em shet-ti em ba-i em khet-i; Un-na em ma'a kheru!»",
+        translation: "«እኔ የብርሃኑ አምላክ ነኝ፤ እኔ ራ ነኝ፤ በጨለማና በፈተና አልጠፋም፤ ነፍሴና ልቤ በጽድቅ ሚዛን ጸንተዋል፤ በብርሃን ወደፊት እወጣለሁ!»",
+        rituals: [
+            "አረንጓዴ የጃስፐር ወይም የላፒስ ላዙሊ ድንጋይ በልብ ቅርጽ ቀርፆ የአንበሳ ምልክት መቅረጽ",
+            "በንጹሕ የግብፅ የሎተስና የከርቤ ዘይት አካልን ማሸት",
+            "ቃሉን በንጋት ፀሐይ መውጫ ወቅት ወደ ምስራቅ ተመልክቶ ማድረስ"
+        ],
+        warning: "ለክፉ ዓላማ ወይም ለሌሎች መጎጃነት ፈጽሞ አይሰራም፤ የልብን ንጽሕናና እውነትን ብቻ የሚጠይቅ የፈርዖኖች ቃል ነው።",
+        history: "በጥንታዊቷ ግብፅ ፈርዖኖችና ካህናት በፓፒረስ ላይ በስዕለት ጽፈው በመቃብራቸው የሚያኖሩት ታላቁ የሰው ልጅ የነፍስ ነጻነት መዝገብ ነው።",
+        seal: "𓋹 𓂀 PERT EM HRU 𓊹 𓏤"
+    },
+    {
+        id: "greek_magical_papyri",
+        titleAmharic: "የግሪክና የግብፅ አስማታዊ ፓፒረሶች (PGM)",
+        titleOriginal: "Papyri Graecae Magicae (Greek Magical Papyri)",
+        origin: "2ኛው ቅድመ ክርስቶስ - 5ኛው መቶ ክፍለ ዘመን (የሄለናዊት ግብፅ)",
+        language: "ጥንታዊ ግሪክኛ (Koine Greek) እና ዴሞቲክ ግብፅኛ",
+        dangerLevel: "ኃይለኛ የሄርሜቲክና የጥሪ አስማት (Hermetic Voice Magic)",
+        purpose: "የሄርሜስ ትሪስመጊስተስ፣ የሄካቴና የአፖሎ ምስጢራትን መግለጥ፣ የታወኩ ነፍሳትን ማረጋጋት",
+        incantation: "«Io Hekate, Chthonia, Enodia, Dadouchos; Phos pherein, Akrouroboros, Abrasax, Sabaoth; Epakouson mou tes phones!»",
+        translation: "«የመንገድና የምድር ጠባቂዋ ሆይ፤ የብርሃን ችቦ ተሸካሚ፣ አብራሳክስ፣ ጸባኦት፤ ድምፄን ስሙ፤ የተሰወረውን እውነት ግለጡልኝ!»",
+        rituals: [
+            "በጨለማ ሌሊት በሦስት መንገዶች መገናኛ (Crossroads) ላይ ማዕጠንት ማጠን",
+            "የነጭ ሽንኩርትና የሎሚ እጣን በከሰል ላይ መጣል",
+            "ቃሉን በዝግታና በጠለቀ ድምፅ ፯ ጊዜ ማንበብ"
+        ],
+        warning: "በፍርሃት ወይም በጥርጣሬ ውስጥ ሆኖ ማከናወን አእምሯዊ ቅዠትን ሊፈጥር ስለሚችል ከፍተኛ የአእምሮ ዝግጅት ያስፈልገዋል።",
+        history: "በግብፅ እስክንድርያና በቴብስ የተገኙ፤ የግሪክን፣ የግብፅንና የባቢሎንን ጥበብ ያዋሃዱ ጥንታዊ ብራናዎችና ፓፒረሶች ናቸው።",
+        seal: "⚡ ☥ ABRASAX HERMETICA ☥ ⚡"
+    },
+    {
+        id: "ars_goetia",
+        titleAmharic: "ሌሜጌቶን (አርስ ጎኤሺያ)",
+        titleOriginal: "The Lesser Key of Solomon (Ars Goetia)",
+        origin: "17ኛው መቶ ክፍለ ዘመን (ጥንታዊ የአውሮፓና የመካከለኛው ምሥራቅ ምንጮች)",
+        language: "ላቲን (Latin) እና እንግሊዝኛ (Early Modern English)",
+        dangerLevel: "በጣም ከፍተኛ አደጋ - የተከለከሉ መንፈሳዊ ኃይላት (Prohibited Evocation)",
+        purpose: "የ፸፪ቱ ጥንታውያን ነገሥታትና አለቆች ማሰሪያ፣ የመንፈሳዊ ፈተናዎች መቆጣጠሪያ",
+        incantation: "«Conjuro vos per Deum Vivum, per Deum Verum, per Deum Sanctum; per Alpha et Omega; ut appareatis statim sine laesione corporis vel animae!»",
+        translation: "«በሕያው አምላክ ስም፣ በእውነተኛው አምላክ ስም፣ በቅዱሱ አምላክ ስም፤ በአልፋና በዖሜጋ ስም፤ በሥጋም ሆነ በነፍስ ላይ ያለምንም ጉዳት ታዘዙኝ!»",
+        rituals: [
+            "ከንጹሕ ብር ወይም ከወርቅ የተሠራ የሰሎሞን የድል ማኅተም (Secret Seal of Solomon) በደረት ላይ ማንጠልጠል",
+            "የመከላከያ ባለ አራት ማዕዘን ጋሻና ክበብ መሬት ላይ መዘርጋት",
+            "ማዕጠንተ ከርቤና ዕጣን ያለማቋረጥ ማጨስ"
+        ],
+        warning: "በዓለማችን እጅግ አደገኛ ከሚባሉ መጻሕፍት አንዱ ተደርጎ ይቆጠራል፤ ያለ ሙሉ መንፈሳዊ ትጥቅና ጥበቃ ወደዚህ መቅረብ ለሰው ልጆች ፈጽሞ አይመከርም።",
+        history: "የሰሎሞንን ታሪክ መሠረት አድርገው በመካከለኛው ዘመን አውሮፓ ካህናትና ፈላስፎች በስውር ሲያነቧቸው ከነበሩት ምስጢራዊ መጻሕፍት ዋነኛው ነው።",
+        seal: "⚔️ ⛧ ARS GOETIA SEAL ⛧ ⚔️"
+    }
+];
+
+function renderGlobalGrimoires() {
+    const grid = document.getElementById("globalGrimoiresGrid");
+    if (!grid) return;
+
+    grid.innerHTML = globalGrimoiresData.map(g => `
+        <div class="herb-card" style="border-color:var(--crimson); background:var(--surface-card);" onclick="speakText('${g.titleAmharic}። ${g.purpose}። ${g.incantation}። ትርጉም፡ ${g.translation}')">
+            <div class="herb-card-header">
+                <h4 style="color:var(--gold-light); font-size:1.15rem;">${g.titleAmharic}</h4>
+                <button class="btn-voice" onclick="event.stopPropagation(); speakText('${g.titleAmharic}። ${g.incantation}። ትርጉም፡ ${g.translation}')">🔊 አድምጥ</button>
+            </div>
+            <div style="font-size:0.8rem; color:var(--text-dim); margin-bottom:6px;">${g.titleOriginal} | ቋንቋ፡ ${g.language}</div>
+            
+            <div style="background:var(--bg-dark); padding:6px 12px; border-radius:6px; margin-bottom:10px; display:inline-block; font-family:serif; color:var(--gold-primary); font-weight:bold; font-size:0.85rem;">
+                ${g.seal}
+            </div>
+
+            <div style="background:rgba(198,40,40,0.15); border:1px solid rgba(198,40,40,0.4); padding:6px 10px; border-radius:6px; margin-bottom:10px;">
+                <span style="color:var(--crimson-light); font-weight:bold; font-size:0.75rem;">⚡ የአደጋ ደረጃ፡ ${g.dangerLevel}</span>
+            </div>
+
+            <div style="font-size:0.85rem; color:var(--text-parchment); margin-bottom:8px;">
+                <strong style="color:var(--gold-light);">🎯 ዓላማና ተግባር፡</strong> ${g.purpose}
+            </div>
+
+            <div class="parchment-block" style="margin-bottom:8px; padding:10px; border-left-color:var(--crimson);">
+                <small style="color:var(--crimson-light); font-weight:bold;">የጥንቱ ትክክለኛ ቃል (Original Incantation)፡</small>
+                <div style="font-size:0.9rem; color:var(--gold-light); font-family:serif; margin-top:4px; line-height:1.6;">${g.incantation}</div>
+                <small style="color:var(--text-dim); display:block; margin-top:4px;"><strong>ትርጉም፡</strong> ${g.translation}</small>
+            </div>
+
+            <div style="font-size:0.85rem; color:var(--text-parchment); margin-bottom:8px;">
+                <strong style="color:var(--gold-light);">🕯️ የታዘዘው ሥርዓት (Ritual)፡</strong>
+                <ul style="padding-left:18px; margin-top:4px;">
+                    ${g.rituals.map(r => `<li style="margin-bottom:3px; font-size:0.8rem;">${r}</li>`).join("")}
+                </ul>
+            </div>
+
+            <div style="background:rgba(198,40,40,0.1); padding:8px; border-radius:6px; margin-top:8px;">
+                <small style="color:var(--crimson-light); display:block; line-height:1.5;"><strong>⚠️ ጥብቅ ማስጠንቀቂያ፡</strong> ${g.warning}</small>
+            </div>
+
+            <div style="margin-top:8px; font-size:0.75rem; color:var(--text-dim);">
+                <strong>ታሪካዊ ዳራ፡</strong> ${g.history} (${g.origin})
+            </div>
+        </div>
+    `).join("");
+}
+

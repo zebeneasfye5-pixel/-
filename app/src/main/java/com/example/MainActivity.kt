@@ -69,5 +69,6 @@ fun AppNavigation(viewModel: MainViewModel = viewModel()) {
         Screen.PAYMENT -> PaymentScreen(viewModel)
         Screen.HISTORY -> HistoryScreen(viewModel)
         Screen.PROFILE -> ProfileScreen(viewModel)
+        Screen.GLOBAL_GRIMOIRES -> GlobalGrimoiresScreen(viewModel)
     }
 }

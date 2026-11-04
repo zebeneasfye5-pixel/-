@@ -188,6 +188,49 @@ fun HomeScreen(viewModel: MainViewModel) {
                         }
                     }
 
+                    // Dedicated button for dangerous/potent authentic world grimoires
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(95.dp)
+                            .clickable { viewModel.navigateTo(Screen.GLOBAL_GRIMOIRES) }
+                            .border(1.5.dp, CrimsonSecondary, RoundedCornerShape(14.dp)),
+                        colors = CardDefaults.cardColors(containerColor = DarkSurfaceVariant),
+                        shape = RoundedCornerShape(14.dp)
+                    ) {
+                        Row(
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .padding(14.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.SpaceBetween
+                        ) {
+                            Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(1f)) {
+                                Box(
+                                    modifier = Modifier
+                                        .size(44.dp)
+                                        .clip(RoundedCornerShape(10.dp))
+                                        .background(CrimsonSecondary.copy(alpha = 0.25f)),
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    Icon(Icons.Default.Public, contentDescription = null, tint = CrimsonLight, modifier = Modifier.size(26.dp))
+                                }
+                                Spacer(modifier = Modifier.width(12.dp))
+                                Column {
+                                    Row(verticalAlignment = Alignment.CenterVertically) {
+                                        Text("ዓለም አቀፍ ጥንታውያን ድግምቶች", fontWeight = FontWeight.Bold, color = GoldPrimary, fontSize = 14.sp)
+                                        Spacer(modifier = Modifier.width(6.dp))
+                                        Surface(color = CrimsonSecondary, shape = RoundedCornerShape(4.dp)) {
+                                            Text("አደገኛ", color = TextParchment, fontSize = 9.sp, fontWeight = FontWeight.Bold, modifier = Modifier.padding(horizontal = 4.dp, vertical = 1.dp))
+                                        }
+                                    }
+                                    Text("Key of Solomon, Picatrix, Book of the Dead, Ars Goetia", color = TextParchmentDim, fontSize = 11.sp, maxLines = 1)
+                                }
+                            }
+                            Icon(Icons.Default.ChevronRight, contentDescription = null, tint = GoldLight)
+                        }
+                    }
+
                     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                         HomeCard("ክፍያና ባንክ", "ቴሌብርና ንግድ ባንክ", Icons.Default.AccountBalance, GoldPrimary, Modifier.weight(1f)) {
                             viewModel.navigateTo(Screen.PAYMENT)

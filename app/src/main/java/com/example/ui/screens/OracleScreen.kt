@@ -166,6 +166,14 @@ fun OracleScreen(viewModel: MainViewModel) {
                                 }
                             }
 
+                            Surface(color = DarkBackground, shape = RoundedCornerShape(8.dp), modifier = Modifier.fillMaxWidth()) {
+                                Column(modifier = Modifier.padding(10.dp), verticalArrangement = Arrangement.spacedBy(3.dp)) {
+                                    Text("📖 ቀጥተኛ የመጽሐፍ ሪፈረንስ፡ ${res.referenceBook}", color = GoldLight, fontSize = 12.sp, fontWeight = FontWeight.Bold)
+                                    Text("ምዕራፍ፡ ${res.referenceChapter} | ${res.referencePage}", color = TextParchment, fontSize = 11.sp)
+                                    Text("የመዛግብት ምንጭ፡ ${res.referenceSource}", color = TextParchmentDim, fontSize = 10.sp)
+                                }
+                            }
+
                             Text(
                                 "ጠያቂ፡ ${res.seekerName} | እናት፡ ${res.motherName} | ኮከብ፡ ${res.zodiacResult.sign.nameAmharic}",
                                 color = TextParchment,

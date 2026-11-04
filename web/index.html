@@ -65,6 +65,7 @@
             <button class="nav-tab" data-tab="healing">🌿 የፈውስ ዕፀዋት</button>
             <button class="nav-tab" data-tab="oracle">📜 የጥበብ ጠያቂ</button>
             <button class="nav-tab" data-tab="enoch">🌌 መጽሐፈ ሄኖክ</button>
+            <button class="nav-tab" data-tab="global_grimoires">🌍 ዓለም አቀፍ ድግምቶች</button>
             <button class="nav-tab" data-tab="payment">💳 ክፍያና ባንክ</button>
         </nav>
     </header>
@@ -99,6 +100,7 @@
                     <button class="btn btn-outline" onclick="switchTab('love')">የመስተፋቅር ቀመር</button>
                     <button class="btn btn-outline" onclick="switchTab('healing')">የፈውስ ዕፀዋት</button>
                     <button class="btn btn-outline" onclick="switchTab('oracle')">ጥበብ ይጠይቁ</button>
+                    <button class="btn btn-outline" style="border-color:var(--crimson-light); color:var(--crimson-light);" onclick="switchTab('global_grimoires')">🌍 ዓለም አቀፍ ድግምቶች</button>
                 </div>
                 <div class="parchment-ornament bottom">✥ ✤ ✥ ✤ ✥ ✤ ✥ ✤ ✥</div>
             </div>
@@ -115,17 +117,19 @@
                 </p>
 
                 <div class="command-input-group">
-                    <input type="text" id="universalQueryInput" placeholder="የሚፈልጉትን ትዕዛዝ ወይም ጥያቄ ይጻፉ (ለምሳሌ፡ የዓይነ ጥላ ድግምትና ጸሎት ከነገጹ፣ ለሆድ ቁርጠት የዕፀዋት ፈውስ፣ የሄኖክ ፀሐይ ደጆች...)" onkeydown="if(event.key==='Enter') executeUniversalCommand()">
+                    <input type="text" id="universalQueryInput" placeholder="የሚፈልጉትን ትዕዛዝ ወይም ጥያቄ ይጻፉ (ለምሳሌ፡ የጥይት መከላከያ፣ ዕፀ መሰውር፣ ዓይነ ጥላ፣ ዳማከሴ...)" onkeydown="if(event.key==='Enter') executeUniversalCommand()">
                     <button class="btn btn-gold" onclick="executeUniversalCommand()">እዘዝ / ጠይቅ ⚡</button>
                 </div>
 
                 <div class="quick-chips-row">
+                    <span class="quick-chip" onclick="setAndRunCommand('የጥይት መከላከያና መክስተ ደመና ጸሎትና አሰራር ከመጽሐፉ ስጠኝ')">🛡️ ጥይት እንዳይመታ (መክስተ ደመና)</span>
+                    <span class="quick-chip" onclick="setAndRunCommand('ስለታማ ነገሮችና ሰይፍ እንዳይመታ ጸሎተ አፍልጣና አሰራር')">⚔️ ስለታማ ነገሮች እንዳይመቱ (አፍልጣ)</span>
+                    <span class="quick-chip" onclick="setAndRunCommand('የዕፀ መሰውር ምስጢር፣ ጸሎትና አሰራር ከመጽሐፉ አውጣልኝ')">👁️‍🗨️ ዕፀ መሰውር (መሰወሪያ)</span>
                     <span class="quick-chip" onclick="setAndRunCommand('የዓይነ ጥላ መፍትሔ ሥራይ ድግምት፣ ጸሎትና አፈጻጸም ከመጽሐፉ ስጠኝ')">⚡ ዓይነ ጥላና መፍትሔ ሥራይ (ድግምት)</span>
                     <span class="quick-chip" onclick="setAndRunCommand('ለሆድ ቁርጠትና ለራስ ምታት የሚሆን የዕፀዋት ፈውስ ከነገጹ ንገረኝ')">🌿 የሆድ ቁርጠትና ራስ ምታት (መጽሐፈ ፈውስ)</span>
                     <span class="quick-chip" onclick="setAndRunCommand('የትዳር ሰላምና የልብ ስምምነት መስተፋቅር ጸሎትና ድርጊት ከመጽሐፉ አውጣልኝ')">❤️ መስተፋቅርና ስምምነት (ተፋቅሮ)</span>
                     <span class="quick-chip" onclick="setAndRunCommand('ስለ መጽሐፈ ሄኖክ ስድስቱ የፀሐይ ደጆችና ፫፻፷፬ቱ ቀናት ቀመር አስረዳኝ')">🌌 ስድስቱ የፀሐይ ደጆች (መጽሐፈ ሄኖክ)</span>
                     <span class="quick-chip" onclick="setAndRunCommand('የንግድ በረከትና የሀብት ማግኛ አስማተ ባርክኤል ጸሎትና ድርጊት ንገረኝ')">💰 የንግድና የሀብት በረከት (ባርክኤል)</span>
-                    <span class="quick-chip" onclick="setAndRunCommand('ራስን ከክፉ ዓይንና ከጠላት መከላከያ ሰይፈ ሥላሴና ዐቃቤ ርእስ ጸሎት')">🛡️ ሰይፈ ሥላሴ (መከላከያ)</span>
                     <span class="quick-chip" onclick="setAndRunCommand('የአቡሻህር አበገደ የቁጥር ቀመርና የ12ቱ ኮከቦች ምስጢር')">✨ አቡሻህር የኮከብ ቀመር (አበገደ)</span>
                 </div>
 
@@ -430,6 +434,9 @@
                 <div class="form-group">
                     <label for="oracleCategory">የጥበቡ ምድብ</label>
                     <select id="oracleCategory">
+                        <option value="የጥይት መከላከያ">የጥይት መከላከያ (ጥይት እንዳይመታና አረር መከላከያ)</option>
+                        <option value="የስለት መከላከያ">የስለት መከላከያ (ሰይፍና ስለታማ ነገሮች መከላከያ)</option>
+                        <option value="ዕፀ መሰውር">ዕፀ መሰውር (ከጠላትና ከአደጋ መሰወሪያ)</option>
                         <option value="መፍትሔ ሥራይ">መፍትሔ ሥራይ (ከድግምትና ክፉ መንፈስ መከላከያ)</option>
                         <option value="መስተፋቅርና ፍቅር">መስተፋቅርና ፍቅር (የፍቅርና የልብ ስምምነት)</option>
                         <option value="ሀብትና ንግድ">ሀብትና ንግድ (የበረከትና የሥራ ስኬት)</option>
@@ -507,6 +514,31 @@
 
             <div id="enochChaptersContainer" class="enoch-chapters">
                 <!-- Dynamically rendered -->
+            </div>
+        </section>
+
+        <!-- GLOBAL GRIMOIRES TAB (በአንድ ቁልፍ ለብቻቸው የተቀመጡ ዓለም አቀፍ ድግምቶች) -->
+        <section id="tab-global_grimoires" class="tab-pane">
+            <div class="pane-header">
+                <h2>🌍 ዓለም አቀፍ ጥንታውያን ድግምቶችና ግሪሞየሮች</h2>
+                <p>በዓለማችን ታሪክ እጅግ ኃይለኛና አደገኛ የሚባሉ ትክክለኛ የጥንት አገራት (ሰሎሞን፣ ግብፅ፣ አረብ፣ ግሪክ) ምስጢራዊ የአሰራር መዛግብት።</p>
+            </div>
+
+            <!-- Caution Warning Box -->
+            <div class="publish-status-box" style="border-color:var(--crimson);">
+                <div class="status-header">
+                    <span class="status-indicator" style="background:var(--crimson); box-shadow:0 0 10px var(--crimson);">●</span>
+                    <h3 style="color:var(--crimson-light);">⚠️ ጥብቅ ማስጠንቀቂያና የጥበብ ክበብ (High Astral Potency)</h3>
+                </div>
+                <p style="color:var(--text-parchment); font-size:0.9rem; margin-top:8px; line-height:1.7;">
+                    እነዚህ ድግምቶችና ሥርዓታት ለትውልድ በጥንቃቄ የተላለፉ ትክክለኛ ዓለም አቀፍ ታሪካዊ መዛግብት ናቸው።
+                    እያንዳንዱ ሥርዓት የራሱ የሆነ የመከላከያ ክበብ (Magic Circle)፣ የመልአክ ማኅተም እና የንጽሕና ደንብ ስላለው ያለ ጥንቃቄ ፈጽሞ አይሞከርም።
+                </p>
+            </div>
+
+            <!-- Dynamic Global Grimoires Grid -->
+            <div id="globalGrimoiresGrid" class="herb-grid" style="margin-top:20px;">
+                <!-- Dynamically filled by app.js -->
             </div>
         </section>
 

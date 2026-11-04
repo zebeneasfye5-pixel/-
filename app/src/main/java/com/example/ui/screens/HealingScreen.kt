@@ -95,6 +95,14 @@ fun HealingScreen(viewModel: MainViewModel) {
 
                             Divider(color = DarkCardBorder)
 
+                            Surface(color = DarkBackground, shape = RoundedCornerShape(8.dp), modifier = Modifier.fillMaxWidth()) {
+                                Column(modifier = Modifier.padding(10.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                                    Text("📖 ሪፈረንስ፡ ${herb.referenceCitation}", color = GoldLight, fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                                    Text("🏷️ በባህላዊ አጠራር፡ ${herb.traditionalFolkName}", color = TextParchment, fontSize = 12.sp)
+                                    Text("📍 የሚገኝበት አካባቢ፡ ${herb.geographicHabitat}", color = TextParchment, fontSize = 12.sp)
+                                }
+                            }
+
                             Text("የሚፈውሳቸው ደዌዎች፡", fontWeight = FontWeight.Bold, color = GoldLight, fontSize = 13.sp)
                             herb.ailmentsTreated.forEach { ailment ->
                                 Row(verticalAlignment = Alignment.CenterVertically) {
@@ -104,22 +112,25 @@ fun HealingScreen(viewModel: MainViewModel) {
                                 }
                             }
 
+                            Text("የአቆራረጡ ሥርዓትና ሕግ (Harvesting Ritual)፡", fontWeight = FontWeight.Bold, color = GoldLight, fontSize = 13.sp)
+                            Text(herb.harvestingRitual, color = TextParchment, fontSize = 12.sp, lineHeight = 17.sp)
+
                             Text("የአዘገጃጀት ቅደም ተከተል፡", fontWeight = FontWeight.Bold, color = GoldLight, fontSize = 13.sp)
-                            Text(herb.preparationMethod, color = TextParchment, fontSize = 12.sp)
+                            Text(herb.preparationMethod, color = TextParchment, fontSize = 12.sp, lineHeight = 17.sp)
 
-                            Text("የአጠቃቀም ዘዴ፡", fontWeight = FontWeight.Bold, color = GoldLight, fontSize = 13.sp)
-                            Text(herb.applicationMethod, color = TextParchment, fontSize = 12.sp)
+                            Text("የአጠቃቀምና የአደራረግ ዘዴ፡", fontWeight = FontWeight.Bold, color = GoldLight, fontSize = 13.sp)
+                            Text(herb.applicationMethod, color = TextParchment, fontSize = 12.sp, lineHeight = 17.sp)
 
-                            Text("የጥንቱ የግእዝ ጸሎት አስማተ ፈውስ፡", fontWeight = FontWeight.Bold, color = CrimsonLight, fontSize = 13.sp)
+                            Text("የጥንቱ የግእዝ ጸሎት አስማተ ፈውስ (ሙሉ ጽሑፍ)፡", fontWeight = FontWeight.Bold, color = CrimsonLight, fontSize = 13.sp)
                             Surface(color = DarkBackground, shape = RoundedCornerShape(8.dp), modifier = Modifier.fillMaxWidth()) {
                                 Column(modifier = Modifier.padding(10.dp)) {
                                     Text(herb.ancientManuscriptPrayer, color = TextParchment, fontSize = 12.sp, lineHeight = 18.sp)
                                     Spacer(modifier = Modifier.height(4.dp))
-                                    Text("ትርጉም፡ ${herb.amharicPrayerTranslation}", color = GoldLight, fontSize = 11.sp)
+                                    Text("ትርጉም፡ ${herb.amharicPrayerTranslation}", color = GoldLight, fontSize = 11.sp, lineHeight = 16.sp)
                                 }
                             }
 
-                            Text("ማስጠንቀቂያ፡ ${herb.safetyAdvisory}", color = CrimsonLight, fontSize = 11.sp)
+                            Text("⚠️ ማስጠንቀቂያ፡ ${herb.safetyAdvisory}", color = CrimsonLight, fontSize = 11.sp)
 
                             Button(
                                 onClick = { selectedHerb = null },
