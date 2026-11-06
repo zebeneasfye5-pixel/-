@@ -2,10 +2,8 @@
   "name": "tinte-tibeb",
   "version": "1.0.0",
   "description": "ጥንተ ጥበብ - የአባቶቻችን ጥንታዊ ጥበብና መጻሕፍት",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "build": "echo 'Build complete'"
+    "start": "node server.js"
   },
   "keywords": [
     "ethiopian-wisdom",
